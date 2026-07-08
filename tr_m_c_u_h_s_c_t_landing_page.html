@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trạm Cứu Hộ Sắc Tố - Masterclass & Workshop Thực Chiến Nemos Việt Nam</title>
+    <!-- Nhúng phông chữ Be Vietnam Pro hỗ trợ tiếng Việt hoàn hảo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Nhúng Font Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Nhúng Tailwind CSS để thiết kế responsive nhanh chóng -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Cấu hình các thiết lập màu sắc thương hiệu và font chữ Be Vietnam Pro của Nemos -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'nemos': {
+                            'blue': '#253d74',
+                            'blueDark': '#121f3d',
+                            'blueLight': '#3a5796',
+                            'gold': '#be9313',
+                            'goldLight': '#dfb233',
+                            'dark': '#0d1627',
+                            'cardBg': '#16233f'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Be Vietnam Pro"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Tùy biến thanh cuộn sang trọng đồng bộ thương hiệu */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0d1627;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #be9313;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #dfb233;
+        }
+    </style>
+</head>
+<body class="bg-nemos-dark text-slate-200 font-sans antialiased overflow-x-hidden">
+
+    <!-- TOP NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 bg-nemos-blue/95 backdrop-blur-md border-b border-nemos-gold/30 shadow-lg transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo công ty Nemos đã cập nhật -->
+                <div class="flex items-center space-x-3">
+                    <img src="Workshop tháng 7_2.png" alt="Nemos Vietnam Logo" class="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/180x50/253d74/ffffff?text=NEMOS+VIETNAM'">
+                </div>
+                
+                <!-- Thông tin liên hệ nhanh và Nút đăng ký nhanh trên desktop -->
+                <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                    <a href="tel:0985138813" class="flex items-center space-x-2 text-slate-100 hover:text-nemos-gold transition-colors duration-200">
+                        <i class="fas fa-phone-alt text-nemos-gold"></i>
+                        <span>098 513 88 13</span>
+                    </a>
+                    <a href="mailto:nemosvietnam@gmail.com" class="flex items-center space-x-2 text-slate-100 hover:text-nemos-gold transition-colors duration-200">
+                        <i class="fas fa-envelope text-nemos-gold"></i>
+                        <span>nemosvietnam@gmail.com</span>
+                    </a>
+                    <a href="#register-form" class="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider text-nemos-dark bg-gradient-to-r from-nemos-gold to-nemos-goldLight shadow-md shadow-nemos-gold/20 hover:shadow-lg hover:shadow-nemos-gold/35 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0">
+                        Đăng Ký Tham Dự
+                    </a>
+                </div>
+
+                <!-- Nút gọi nhanh trên mobile -->
+                <div class="flex md:hidden items-center space-x-3">
+                    <a href="tel:0985138813" class="p-2.5 rounded-full bg-nemos-dark border border-nemos-gold/40 text-nemos-gold hover:bg-nemos-gold hover:text-nemos-dark transition-colors duration-300">
+                        <i class="fas fa-phone-alt"></i>
+                    </a>
+                    <a href="#register-form" class="px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-nemos-dark bg-nemos-gold hover:bg-nemos-goldLight transition-colors duration-300">
+                        Đăng Ký
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative py-12 lg:py-20 bg-gradient-to-b from-nemos-blueDark via-nemos-dark to-nemos-dark overflow-hidden">
+        <!-- Các hiệu ứng ánh sáng nền tạo chiều sâu cho Website Thẩm mỹ Y khoa -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-nemos-blue/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-1/3 right-1/4 w-80 h-80 bg-nemos-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Cột trái: Tiêu đề dạng ảnh Typography độc quyền và phần giới thiệu cốt lõi -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-widest text-nemos-gold bg-nemos-gold/15 border border-nemos-gold/30 uppercase">
+                        <i class="fas fa-user-md mr-1.5"></i> Đào Tạo Thực Chiến Chuyên Sâu
+                    </span>
+                    
+                    <!-- Ảnh Tiêu đề Thiết kế nghệ thuật "Workshop tháng 7.png" -->
+                    <div class="flex justify-center lg:justify-start">
+                        <img src="Workshop tháng 7.png" alt="Trạm Cứu Hộ Sắc Tố Typography" class="max-w-full h-auto drop-shadow-[0_10px_20px_rgba(37,61,116,0.3)] transition-transform duration-500 hover:scale-[1.02]" onerror="this.onerror=null; this.src='https://placehold.co/600x250/253d74/ffffff?text=TR%E1%BA%A0M+C%E1%BB%A0U+H%E1%BB%98+S%E1%BA%A2C+T%E1%BB%90'">
+                    </div>
+                    
+                    <p class="text-lg md:text-xl text-slate-300 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Khi công nghệ đơn thuần chưa hiệu quả – cần tư duy thực chiến của chuyên gia.
+                    </p>
+                    
+                    <div class="h-1 w-20 bg-gradient-to-r from-nemos-gold to-nemos-blue mx-auto lg:mx-0"></div>
+                    
+                    <p class="text-base text-slate-400 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Nemos Việt Nam chính thức mở cổng đăng ký chương trình Masterclass & Workshop chuyên sâu <strong class="text-white">“Trạm Cứu Hộ Sắc Tố”</strong> – khóa đào tạo thực chiến dành cho các Chủ Spa, Thẩm mỹ viện và Đại lý đang vận hành công nghệ cao nhưng vẫn gặp khó trong việc tối ưu hiệu quả điều trị sắc tố cho khách hàng.
+                    </p>
+                    <p class="text-base text-slate-400 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Chương trình được dẫn dắt trực tiếp bởi <strong class="text-nemos-gold">Chuyên gia Huyền Nemos</strong>, tập trung vào tư duy phối hợp giữa công nghệ – hoạt chất – phục hồi nền da – hội chẩn ca thực tế.
+                    </p>
+
+                    <!-- Khối thông tin nhanh -->
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 pt-4 text-left max-w-lg mx-auto lg:mx-0">
+                        <div class="p-3.5 bg-nemos-cardBg/60 border border-nemos-blue/30 rounded-xl">
+                            <p class="text-xs text-slate-400">Thời lượng</p>
+                            <p class="text-sm font-bold text-white mt-1">3 Ngày Trực Tiếp</p>
+                        </div>
+                        <div class="p-3.5 bg-nemos-cardBg/60 border border-nemos-blue/30 rounded-xl">
+                            <p class="text-xs text-slate-400">Dẫn dắt bởi</p>
+                            <p class="text-sm font-bold text-white mt-1">Huyền Nemos</p>
+                        </div>
+                        <div class="col-span-2 md:col-span-1 p-3.5 bg-nemos-cardBg/60 border border-nemos-gold/20 rounded-xl">
+                            <p class="text-xs text-nemos-gold">Số lượng vé</p>
+                            <p class="text-sm font-bold text-nemos-gold mt-1">Cực kỳ Giới Hạn</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cột phải: Khối đếm ngược 9 ngày và lời kêu gọi đăng ký -->
+                <div class="lg:col-span-5 relative">
+                    <div class="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-nemos-gold to-nemos-blue opacity-30 blur-lg"></div>
+                    <div class="relative bg-nemos-cardBg border border-nemos-blue/40 rounded-3xl p-6 sm:p-8 shadow-2xl">
+                        
+                        <!-- Header thẻ đăng ký -->
+                        <div class="text-center pb-6 border-b border-nemos-blue/30">
+                            <p class="text-xs uppercase tracking-widest text-nemos-gold font-bold">Chương Trình Đào Tạo Thực Chiến</p>
+                            <h3 class="text-xl font-bold text-white mt-1">CƠ HỘI SỞ HỮU VÉ THAM DỰ</h3>
+                            <p class="text-xs text-slate-400 mt-2">Cổng đăng ký sẽ đóng sau khi đủ số lượng học viên sàng lọc đạt yêu cầu</p>
+                        </div>
+
+                        <!-- Khu vực đồng hồ đếm ngược 9 ngày hoàn hảo -->
+                        <div class="py-6">
+                            <p class="text-center text-xs font-semibold uppercase text-slate-400 tracking-wider mb-4">Cổng Đăng Ký Sẽ Đóng Sau:</p>
+                            <div class="grid grid-cols-4 gap-2.5 text-center">
+                                <div class="bg-nemos-dark border border-nemos-gold/35 rounded-xl p-3">
+                                    <span id="days" class="block text-2xl sm:text-3xl font-extrabold text-nemos-gold tracking-tight">09</span>
+                                    <span class="text-[10px] uppercase text-slate-400 block mt-1">Ngày</span>
+                                </div>
+                                <div class="bg-nemos-dark border border-nemos-blue/50 rounded-xl p-3">
+                                    <span id="hours" class="block text-2xl sm:text-3xl font-extrabold text-white tracking-tight">00</span>
+                                    <span class="text-[10px] uppercase text-slate-400 block mt-1">Giờ</span>
+                                </div>
+                                <div class="bg-nemos-dark border border-nemos-blue/50 rounded-xl p-3">
+                                    <span id="minutes" class="block text-2xl sm:text-3xl font-extrabold text-white tracking-tight">00</span>
+                                    <span class="text-[10px] uppercase text-slate-400 block mt-1">Phút</span>
+                                </div>
+                                <div class="bg-nemos-dark border border-nemos-blue/50 rounded-xl p-3">
+                                    <span id="seconds" class="block text-2xl sm:text-3xl font-extrabold text-nemos-gold tracking-tight">00</span>
+                                    <span class="text-[10px] uppercase text-slate-400 block mt-1">Giây</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Nút CTA hành động đẩy nhanh tới form -->
+                        <div class="space-y-4 pt-2">
+                            <a href="#register-form" class="flex items-center justify-center w-full py-4 rounded-2xl text-sm font-bold uppercase tracking-wider text-nemos-dark bg-gradient-to-r from-nemos-gold to-nemos-goldLight shadow-lg shadow-nemos-gold/25 hover:shadow-xl hover:shadow-nemos-gold/40 transition-all duration-300 transform hover:-translate-y-1">
+                                <i class="fas fa-edit mr-2"></i> Gửi Đăng Ký Sàng Lọc Ngay
+                            </a>
+                            <div class="flex items-center justify-center space-x-4 text-xs text-slate-400">
+                                <span><i class="fas fa-shield-alt text-nemos-gold mr-1"></i> Bảo mật thông tin</span>
+                                <span>•</span>
+                                <span><i class="fas fa-check-circle text-nemos-gold mr-1"></i> Liên hệ trong 24h</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY SECTION -->
+    <section class="py-20 bg-nemos-dark border-t border-nemos-blue/20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-widest text-nemos-gold font-bold block mb-2">// THỰC TRẠNG THẨM MỸ CÔNG NGHỆ CAO</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white">VÌ SAO CHƯƠNG TRÌNH NÀY ĐƯỢC TỔ CHỨC?</h2>
+                <p class="text-slate-400 mt-4 leading-relaxed">
+                    Trong kỷ nguyên thẩm mỹ công nghệ cao, nhiều cơ sở đã đầu tư hàng trăm triệu đến hàng tỷ đồng cho máy móc hiện đại nhưng vẫn loay hoay trong vòng xoáy biến chứng điều trị.
+                </p>
+            </div>
+
+            <!-- Grid hiển thị các nỗi đau thực tế của Spa -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+                <div class="lg:col-span-2 space-y-4 bg-nemos-cardBg/30 border border-nemos-blue/20 p-6 rounded-2xl flex flex-col justify-center">
+                    <h3 class="text-xl font-bold text-nemos-gold">Thực tế phũ phàng...</h3>
+                    <p class="text-slate-300 leading-relaxed text-sm">
+                        Máy móc không sai. Vấn đề nằm ở cách đọc nền da, chọn thông số, phối hợp hoạt chất và kiểm soát phục hồi sau xử lý.
+                    </p>
+                    <p class="text-slate-300 leading-relaxed text-sm">
+                        Đó là lý do Nemos Việt Nam xây dựng chương trình <strong class="text-white">“Trạm Cứu Hộ Sắc Tố”</strong> – nơi các bài toán khó được mổ xẻ trực diện bằng tư duy chuyên môn và kinh nghiệm thực chiến.
+                    </p>
+                    <div class="pt-4">
+                        <span class="inline-flex items-center text-xs text-nemos-gold font-semibold uppercase tracking-wider">
+                            Học thực chiến - Làm thực tế <i class="fas fa-arrow-right ml-1.5"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-3 grid sm:grid-cols-2 gap-4">
+                    <!-- Nỗi đau 1 -->
+                    <div class="p-5 rounded-2xl bg-nemos-cardBg/40 border-l-4 border-red-500 hover:border-nemos-gold transition-all duration-300">
+                        <div class="w-8 h-8 rounded-full bg-red-500/10 text-red-500 flex items-center justify-center font-bold mb-3">1</div>
+                        <h4 class="font-bold text-white text-sm mb-1">Hiệu quả không ổn định</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Đi máy laser nhiều lần nhưng sắc tố của khách hàng vẫn dửng dưng không cải thiện.</p>
+                    </div>
+                    <!-- Nỗi đau 2 -->
+                    <div class="p-5 rounded-2xl bg-nemos-cardBg/40 border-l-4 border-red-500 hover:border-nemos-gold transition-all duration-300">
+                        <div class="w-8 h-8 rounded-full bg-red-500/10 text-red-500 flex items-center justify-center font-bold mb-3">2</div>
+                        <h4 class="font-bold text-white text-sm mb-1">Dội ngược sắc tố dữ dội</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Da khách dễ bị tái sạm lại nhanh chóng, xuất hiện các vết loang lổ mất sắc tố.</p>
+                    </div>
+                    <!-- Nỗi đau 3 -->
+                    <div class="p-5 rounded-2xl bg-nemos-cardBg/40 border-l-4 border-red-500 hover:border-nemos-gold transition-all duration-300">
+                        <div class="w-8 h-8 rounded-full bg-red-500/10 text-red-500 flex items-center justify-center font-bold mb-3">3</div>
+                        <h4 class="font-bold text-white text-sm mb-1">Nền da yếu & Tổn thương</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Bối rối xử lý các nền da mỏng yếu do từng peel sai cách hoặc đi sai năng lượng cao.</p>
+                    </div>
+                    <!-- Nỗi đau 4 -->
+                    <div class="p-5 rounded-2xl bg-nemos-cardBg/40 border-l-4 border-red-500 hover:border-nemos-gold transition-all duration-300">
+                        <div class="w-8 h-8 rounded-full bg-red-500/10 text-red-500 flex items-center justify-center font-bold mb-3">4</div>
+                        <h4 class="font-bold text-white text-sm mb-1">Thiếu tư duy phối hợp</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Không nắm vững cách kết hợp khéo léo các hoạt chất bôi thoa Trước – Trong – Sau khi đi máy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Câu chốt hạ ấn tượng -->
+            <div class="mt-12 p-6 rounded-2xl bg-gradient-to-r from-nemos-blue/40 to-nemos-blueDark border border-nemos-gold/30 text-center max-w-4xl mx-auto">
+                <p class="text-base sm:text-lg text-slate-200">
+                    <i class="fas fa-exclamation-triangle text-nemos-gold mr-2"></i>
+                    Gặp ca da khó nhưng <span class="font-bold text-nemos-gold">thiếu tư duy hội chẩn</span> và sửa sai phác đồ là rào cản lớn nhất khiến Spa của bạn mất uy tín đối với khách hàng.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TARGET AUDIENCE SECTION -->
+    <section class="py-20 bg-nemos-blueDark/60 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Hình ảnh mang phong cách Medical minh họa đối tượng -->
+                <div class="space-y-4">
+                    <span class="text-xs uppercase tracking-widest text-nemos-gold font-bold block">// ĐỊNH VỊ HỌC VIÊN PHÙ HỢP</span>
+                    <h2 class="text-3xl font-extrabold text-white">CHƯƠNG TRÌNH NÀY DÀNH CHO AI?</h2>
+                    <p class="text-slate-400 leading-relaxed">
+                        Chương trình đào tạo này không dành cho số đông. Đây là một khóa học có sự chọn lọc cực kỳ khắt khe chỉ dành riêng cho những cơ sở thẩm mỹ thực sự muốn hiểu sâu, làm đúng và tự tay làm chủ phác đồ.
+                    </p>
+                    
+                    <div class="space-y-3.5 pt-4">
+                        <div class="flex items-start space-x-3">
+                            <span class="p-1 rounded-full bg-nemos-gold/10 text-nemos-gold mt-1"><i class="fas fa-check-circle text-xs"></i></span>
+                            <p class="text-slate-300 text-sm">Chủ Spa, Thẩm mỹ viện đã hoặc đang sở hữu thiết bị laser, công nghệ cao.</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="p-1 rounded-full bg-nemos-gold/10 text-nemos-gold mt-1"><i class="fas fa-check-circle text-xs"></i></span>
+                            <p class="text-slate-300 text-sm">Các Đại lý chính thức của Nemos muốn nâng cấp trình độ và năng lực xử lý sắc tố chuyên nghiệp.</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="p-1 rounded-full bg-nemos-gold/10 text-nemos-gold mt-1"><i class="fas fa-check-circle text-xs"></i></span>
+                            <p class="text-slate-300 text-sm">Cơ sở đang gặp khó khăn trước các ca sạm, loang màu, tăng sắc tố dội ngược do trị liệu sai.</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="p-1 rounded-full bg-nemos-gold/10 text-nemos-gold mt-1"><i class="fas fa-check-circle text-xs"></i></span>
+                            <p class="text-slate-300 text-sm">Đơn vị muốn phát triển uy tín bằng năng lực chuyên môn cốt lõi thay vì phụ thuộc hoàn toàn vào quảng cáo máy móc.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thẻ khẳng định chất lượng -->
+                <div class="relative">
+                    <div class="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-nemos-gold to-nemos-blue opacity-25 blur-lg"></div>
+                    <div class="relative bg-nemos-cardBg border border-nemos-blue/40 rounded-2xl p-8 space-y-6">
+                        <div class="text-nemos-gold text-4xl"><i class="fas fa-quote-left"></i></div>
+                        <p class="text-lg text-slate-200 italic font-light leading-relaxed">
+                            "Đây không phải là một khóa học lý thuyết thông thường. Đây là chương trình chuyên biệt dành cho những cơ sở thực sự mong muốn hiểu sâu – làm đúng – sửa sai – ứng dụng thực tế được ngay tại chỗ sau khi kết thúc đào tạo."
+                        </p>
+                        <div class="flex items-center space-x-4 pt-4 border-t border-nemos-blue/25">
+                            <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-nemos-gold bg-nemos-blue">
+                                <img src="Workshop tháng 7 - Huyền Nemos.jpg" alt="Huyền Nemos" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/100x100/121f3d/ffffff?text=CEO'">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Chuyên gia Huyền Nemos</h4>
+                                <p class="text-xs text-nemos-gold">CEO & Founder Nemos Việt Nam</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE VALUES SECTION -->
+    <section class="py-20 bg-nemos-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-widest text-nemos-gold font-bold block mb-2">// KHOA HỌC & THỰC TIỄN</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white">GIÁ TRỊ CỐT LÕI CỦA MASTERCLASS</h2>
+                <p class="text-slate-400 mt-4">Sau 3 ngày đào tạo trực tiếp đỉnh cao, học viên sẽ được trang bị hệ thống kiến thức và công cụ độc quyền:</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Giá trị 1 -->
+                <div class="p-6 rounded-2xl bg-nemos-cardBg/35 border border-nemos-blue/20 hover:border-nemos-gold/40 transition-colors duration-300 flex items-start space-x-5">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-nemos-blue/40 text-nemos-gold flex items-center justify-center text-xl font-bold border border-nemos-gold/30">1</div>
+                    <div class="space-y-2">
+                        <h3 class="text-lg font-bold text-white">Tư duy gốc về sắc tố trên nền da thực tế</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">Hiểu sâu sắc vì sao cùng áp dụng một công nghệ nhưng mỗi nền da khách hàng lại cho phản ứng khác biệt. Từ đó, biết cách phân tích căn nguyên để đề ra hướng xử lý chuẩn y khoa.</p>
+                    </div>
+                </div>
+
+                <!-- dũng trị 2 -->
+                <div class="p-6 rounded-2xl bg-nemos-cardBg/35 border border-nemos-blue/20 hover:border-nemos-gold/40 transition-colors duration-300 flex items-start space-x-5">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-nemos-blue/40 text-nemos-gold flex items-center justify-center text-xl font-bold border border-nemos-gold/30">2</div>
+                    <div class="space-y-2">
+                        <h3 class="text-lg font-bold text-white">Chiến lược phục hồi nền da trước khi xử lý</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">Loại bỏ tư duy "đột kích, đánh mạnh" lỗi thời. Bạn sẽ bắt đầu từ việc tối ưu hóa hàng rào bảo vệ da, ổn định cấu trúc để triệt tiêu nguy cơ dội ngược sắc tố hoặc tái sạm.</p>
+                    </div>
+                </div>
+
+                <!-- dũng trị 3 -->
+                <div class="p-6 rounded-2xl bg-nemos-cardBg/35 border border-nemos-blue/20 hover:border-nemos-gold/40 transition-colors duration-300 flex items-start space-x-5">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-nemos-blue/40 text-nemos-gold flex items-center justify-center text-xl font-bold border border-nemos-gold/30">3</div>
+                    <div class="space-y-2">
+                        <h3 class="text-lg font-bold text-white">Kỹ nghệ phối hợp công nghệ & hoạt chất chuyên sâu</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">Làm chủ nghệ thuật thiết lập thông số máy, xác định điểm đích lâm sàng và thời điểm bổ sung hoạt chất kê đơn chính xác nhằm đạt hiệu quả cao nhất.</p>
+                    </div>
+                </div>
+
+                <!-- dũng trị 4 -->
+                <div class="p-6 rounded-2xl bg-nemos-cardBg/35 border border-nemos-blue/20 hover:border-nemos-gold/40 transition-colors duration-300 flex items-start space-x-5">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-nemos-blue/40 text-nemos-gold flex items-center justify-center text-xl font-bold border border-nemos-gold/30">4</div>
+                    <div class="space-y-2">
+                        <h3 class="text-lg font-bold text-white">Hội chẩn trực tiếp ca lâm sàng thực tế tại hội trường</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">Cơ hội độc nhất mang ảnh chụp ca biến chứng khó tại Spa của bạn để được Chuyên gia Huyền Nemos trực tiếp phân tích lỗi sai và trực tiếp sửa lại phác đồ chữa cháy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DETAILED CURRICULUM SECTION (TABBED INTERFACE) -->
+    <section class="py-20 bg-nemos-blueDark/40 border-t border-b border-nemos-blue/20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-widest text-nemos-gold font-bold block mb-2">// KHUNG ĐÀO TẠO CHI TIẾT</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white">LỘ TRÌNH ĐÀO TẠO 3 NGÀY TRỰC TIẾP</h2>
+                <p class="text-slate-400 mt-4">Vui lòng nhấp chọn từng ngày bên dưới để khám phá nội dung chi tiết của khóa học.</p>
+            </div>
+
+            <!-- Nút điều hướng Tab -->
+            <div class="flex justify-center space-x-2 md:space-x-4 mb-12 max-w-2xl mx-auto">
+                <button onclick="switchTab(1)" id="tab-btn-1" class="flex-1 py-4 px-3 sm:px-6 text-center font-bold text-sm sm:text-base rounded-2xl border transition-all duration-300 focus:outline-none bg-nemos-gold text-nemos-dark border-nemos-gold shadow-lg shadow-nemos-gold/25">
+                    DAY 1
+                    <span class="block text-[10px] font-normal uppercase tracking-wider mt-1">Tư duy & Phục hồi</span>
+                </button>
+                <button onclick="switchTab(2)" id="tab-btn-2" class="flex-1 py-4 px-3 sm:px-6 text-center font-bold text-sm sm:text-base rounded-2xl border transition-all duration-300 focus:outline-none bg-nemos-cardBg/60 text-slate-400 border-nemos-blue/30 hover:border-nemos-gold/50">
+                    DAY 2
+                    <span class="block text-[10px] font-normal uppercase tracking-wider mt-1">Công nghệ & Hoạt chất</span>
+                </button>
+                <button onclick="switchTab(3)" id="tab-btn-3" class="flex-1 py-4 px-3 sm:px-6 text-center font-bold text-sm sm:text-base rounded-2xl border transition-all duration-300 focus:outline-none bg-nemos-cardBg/60 text-slate-400 border-nemos-blue/30 hover:border-nemos-gold/50">
+                    DAY 3
+                    <span class="block text-[10px] font-normal uppercase tracking-wider mt-1">Thực tế & Hội chẩn</span>
+                </button>
+            </div>
+
+            <!-- Tab Content Container -->
+            <div class="max-w-4xl mx-auto">
+                
+                <!-- CONTENT DAY 1 -->
+                <div id="tab-content-1" class="space-y-8 animate-fadeIn">
+                    <div class="bg-nemos-cardBg border border-nemos-blue/30 rounded-3xl p-6 sm:p-8 relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-2 h-full bg-nemos-gold"></div>
+                        <span class="text-xs font-bold text-nemos-gold uppercase tracking-widest block mb-1">Ngày đào tạo thứ nhất</span>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white mb-6">TƯ DUY GỐC THỰC CHIẾN & CHIẾN LƯỢC PHỤC HỒI LÀN DA</h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <!-- Buổi sáng -->
+                            <div class="space-y-4">
+                                <h4 class="font-bold text-nemos-gold text-base pb-2 border-b border-nemos-blue/35">
+                                    <i class="far fa-clock mr-2"></i> BUỔI SÁNG: Tư duy khoa học về sắc tố
+                                </h4>
+                                <ul class="space-y-3 text-slate-300 text-sm">
+                                    <li class="flex items-start"><i class="fas fa-caret-right text-nemos-gold mr-2 mt-1"></i> Phân tích vì sao các phác đồ công nghệ đơn thuần thường chưa đạt kết quả như kỳ vọng</li>
+                                    <li class="flex items-start"><i class="fas fa-caret-right text-nemos-gold mr-2 mt-1"></i> Nhận diện nguyên nhân gốc rễ khiến sắc tố dễ tái phát hoặc dội ngược</li>
+                                    <li class="flex items-start"><i class="fas fa-caret-right text-nemos-gold mr-2 mt-1"></i> Tư duy xử lý sắc tố dựa trên nền da thực tế của khách hàng Việt Nam</li>
+                                    <li class="flex items-start"><i class="fas fa-caret-right text-nemos-gold mr-2 mt-1"></i> Cách đánh giá chính xác nền da trước khi quyết định can thiệp công nghệ</li>
+                                </ul>
+                            </div>
+                            <!-- Buổi chiều -->
+                            <div class="space-y-4">
+                                <h4 class="font-bold text-nemos-gold text-base pb-2 border-b border-nemos-blue/35">
+                                    <i class="fas fa-flask mr-2"></i> BUỔI CHIỀU: Workshop 1 – Trạm Cứu Hộ Làn Da
+                                </h4>
+                                <ul class="space-y-3 text-slate-300 text-sm">
+                                    <li class="flex items-start"><i class="fas fa-caret-right text-nemos-gold mr-2 mt-1"></i> Nhận diện thực tế các nền da bị đậm màu dội ngược</li>
+                                    <li class="flex items-start"><i class="fas fa-caret-right text-nemos-gold mr-2 mt-1"></i> Phân loại chi tiết da loang lổ do đi sai năng lượng hoặc peel không đúng cách</li>
+                                    <li class="flex items-start"><i class="fas fa-caret-right text-nemos-gold mr-2 mt-1"></i> Thiết lập phác đồ phục hồi khoa học cho nền da bị tổn thương</li>
+                                    <li class="flex items-start"><i class="fas fa-caret-right text-nemos-gold mr-2 mt-1"></i> Ứng dụng các hoạt chất hỗ trợ làm dịu, củng cố và tái tạo nền da hư tổn</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CONTENT DAY 2 -->
+                <div id="tab-content-2" class="space-y-8 hidden animate-fadeIn">
+                    <div class="bg-nemos-cardBg border border-nemos-blue/30 rounded-3xl p-6 sm:p-8 relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-2 h-full bg-nemos-gold"></div>
+                        <span class="text-xs font-bold text-nemos-gold uppercase tracking-widest block mb-1">Ngày đào tạo thứ hai</span>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white mb-6">BIỆN PHÁP PHỐI HỢP KÉP: CÔNG NGHỆ NÂNG CAO & HOẠT CHẤT CHUYÊN SÂU</h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <!-- Buổi sáng -->
+                            <div class="space-y-4">
+                                <h4 class="font-bold text-nemos-gold text-base pb-2 border-b border-nemos-blue/35">
+                                    <i class="far fa-clock mr-2"></i> BUỔI SÁNG: Nghệ thuật ứng dụng công nghệ
+                                </h4>
+                                <ul class="space-y-3 text-slate-300 text-sm">
+                                    <li class="flex items-start"><i class="fas fa-caret-right text-nemos-gold mr-2 mt-1"></i> Làm chủ tư duy tối ưu hóa các thông số máy thực tế</li>
+                                    <li class="flex items-start"><i class="fas fa-caret-right text-nemos-gold mr-2 mt-1"></i> Hiểu rõ vai trò của spot size, năng lượng và tần số trong từng tình trạng da cụ thể</li>
+                                    <li class="flex items-start"><i class="fas fa-caret-right text-nemos-gold mr-2 mt-1"></i> Định hướng xử lý cho da mảng, góc sắc tố đậm và sắc tố hỗn hợp phức tạp</li>
+                                    <li class="flex items-start"><i class="fas fa-caret-right text-nemos-gold mr-2 mt-1"></i> Tránh các lỗi chí mạng thường gặp khi lạm dụng năng lượng quá mức</li>
+                                </ul>
+                            </div>
+                            <!-- Buổi chiều -->
+                            <div class="space-y-4">
+                                <h4 class="font-bold text-nemos-gold text-base pb-2 border-b border-nemos-blue/35">
+                                    <i class="fas fa-magic mr-2"></i> BUỔI CHIỀU: Workshop 2 – Kỹ nghệ phối hợp hoạt chất
+                                </h4>
+                                <ul class="space-y-3 text-slate-300 text-sm">
+                                    <li class="flex items-start"><i class="fas fa-caret-right text-nemos-gold mr-2 mt-1"></i> Công thức phối hợp hoạt chất vàng Trước – Trong – Sau khi đi máy</li>
+                                    <li class="flex items-start"><i class="fas fa-caret-right text-nemos-gold mr-2 mt-1"></i> Cách kiểm soát triệt để gốc sắc tố và giảm tối đa nguy cơ tái sạm</li>
+                                    <li class="flex items-start"><i class="fas fa-caret-right text-nemos-gold mr-2 mt-1"></i> Tư duy duy trì làn da đều màu bền vững sau khi kết thúc liệu trình</li>
+                                    <li class="flex items-start"><i class="fas fa-caret-right text-nemos-gold mr-2 mt-1"></i> Định hướng xây dựng hiệu ứng làn da sáng khỏe, căng bóng tự nhiên</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CONTENT DAY 3 -->
+                <div id="tab-content-3" class="space-y-8 hidden animate-fadeIn">
+                    <div class="bg-nemos-cardBg border border-nemos-blue/30 rounded-3xl p-6 sm:p-8 relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-2 h-full bg-nemos-gold"></div>
+                        <span class="text-xs font-bold text-nemos-gold uppercase tracking-widest block mb-1">Ngày đào tạo thứ ba</span>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white mb-6">QUY TRÌNH THỰC TẾ & HỘI CHẨN TRỰC TIẾP TẠI CHỖ</h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <!-- Buổi sáng -->
+                            <div class="space-y-4">
+                                <h4 class="font-bold text-nemos-gold text-base pb-2 border-b border-nemos-blue/35">
+                                    <i class="far fa-clock mr-2"></i> BUỔI SÁNG: Chuyển giao quy trình thực tế
+                                </h4>
+                                <ul class="space-y-3 text-slate-300 text-sm">
+                                    <li class="flex items-start"><i class="fas fa-caret-right text-nemos-gold mr-2 mt-1"></i> Hệ thống hóa quy trình kỹ thuật chuẩn chỉnh chuyên nghiệp</li>
+                                    <li class="flex items-start"><i class="fas fa-caret-right text-nemos-gold mr-2 mt-1"></i> Trực quan hóa các ca lâm sàng thực tế đã được Nemos hỗ trợ thành công</li>
+                                    <li class="flex items-start"><i class="fas fa-caret-right text-nemos-gold mr-2 mt-1"></i> Phân tích cặn kẽ những lỗi sai kinh điển trong xử lý sắc tố</li>
+                                    <li class="flex items-start"><i class="fas fa-caret-right text-nemos-gold mr-2 mt-1"></i> Thiết lập phác đồ có tính logic, an toàn và dễ dàng theo dõi</li>
+                                </ul>
+                            </div>
+                            <!-- Buổi chiều -->
+                            <div class="space-y-4">
+                                <h4 class="font-bold text-nemos-gold text-base pb-2 border-b border-nemos-blue/35">
+                                    <i class="fas fa-user-md mr-2"></i> BUỔI CHIỀU: Hội chẩn trực tiếp cùng Chuyên gia
+                                </h4>
+                                <div class="bg-nemos-dark/60 p-4 rounded-xl border border-nemos-blue/30 text-xs text-slate-300 space-y-2">
+                                    <p class="font-bold text-white text-sm">Điểm nhấn giá trị thực chiến nhất:</p>
+                                    <p>Học viên mang hình ảnh ca da lỗi, ca hỏng khó tại Spa của mình để Chuyên gia Huyền Nemos trực tiếp:</p>
+                                    <ul class="list-disc pl-4 space-y-1 mt-1 text-slate-400">
+                                        <li>Phân tích kỹ lưỡng tình trạng nền da hiện tại</li>
+                                        <li>Chỉ rõ điểm sai tai hại trong phác đồ cũ</li>
+                                        <li>Đưa ra hướng giải quyết sửa sai phác đồ ngay tại hội trường</li>
+                                        <li>Định hướng tư duy chăm sóc và bảo toàn kết quả</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERT MENTOR SECTION -->
+    <section class="py-20 bg-nemos-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Ảnh chân dung chuyên gia thiết kế trên nền tối sang trọng đồng bộ -->
+                <div class="lg:col-span-5 relative">
+                    <div class="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-nemos-gold to-nemos-blue opacity-30 blur-lg"></div>
+                    <div class="relative bg-nemos-blueDark rounded-3xl p-4 border border-nemos-blue/30 overflow-hidden shadow-2xl flex justify-center items-center">
+                        <img src="Workshop tháng 7 - Huyền Nemos.jpg" alt="Chuyên gia Huyền Nemos" class="max-h-[500px] w-auto object-contain transition-transform duration-500 hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/400x500/121f3d/ffffff?text=Chuyen+Gia+Huyen+Nemos'">
+                        <!-- Label thông tin CEO nổi bật phía dưới -->
+                        <div class="absolute bottom-6 left-6 right-6 bg-nemos-blue/95 border border-nemos-gold/50 rounded-2xl p-4 text-center backdrop-blur-md">
+                            <p class="text-xs text-nemos-gold font-bold uppercase tracking-widest">Người Sáng Lập Nemos Việt Nam</p>
+                            <h4 class="text-lg font-bold text-white mt-1">Chuyên gia Huyền Nemos</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thông tin giới thiệu & quote -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-xs uppercase tracking-widest text-nemos-gold font-bold block">// NGƯỜI DẪN ĐƯỜNG TẬN TÂM</span>
+                    <h2 class="text-3xl font-extrabold text-white">Chuyên gia Huyền Nemos</h2>
+                    
+                    <div class="h-1 w-20 bg-nemos-gold"></div>
+                    
+                    <p class="text-slate-300 leading-relaxed text-base">
+                        Với kinh nghiệm nhiều năm đào tạo chuyên môn, trực tiếp hội chẩn và đồng hành gỡ rối biến chứng lâm sàng cùng hàng trăm Spa/Thẩm mỹ viện lớn nhỏ, Chuyên gia Huyền Nemos sẽ dẫn dắt toàn bộ chương trình huấn luyện đặc biệt này.
+                    </p>
+                    
+                    <div class="bg-nemos-cardBg/40 border-l-4 border-nemos-gold p-5 rounded-r-2xl space-y-3">
+                        <p class="text-sm text-slate-300 italic">
+                            "Điểm khác biệt căn bản nhất của Masterclass không nằm ở việc chúng tôi trao thêm cho các bạn một vài công thức rập khuôn có sẵn. Nó nằm ở việc giúp bạn hình thành tư duy tự đọc da – tư duy biết sửa sai – tư duy thấu đáo khi phối hợp phác đồ để áp dụng linh hoạt trên mọi ca da thực tế tại Spa."
+                        </p>
+                        <p class="text-xs font-bold text-white text-right">— Chuyên gia Huyền Nemos</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 pt-4 text-center">
+                        <div class="p-4 bg-nemos-cardBg/30 rounded-2xl border border-nemos-blue/20">
+                            <span class="block text-2xl font-extrabold text-nemos-gold">100%</span>
+                            <span class="text-xs text-slate-400">Kiến thức thực chiến lâm sàng</span>
+                        </div>
+                        <div class="p-4 bg-nemos-cardBg/30 rounded-2xl border border-nemos-blue/20">
+                            <span class="block text-2xl font-extrabold text-nemos-gold">01 kèm 01</span>
+                            <span class="text-xs text-slate-400">Trực tiếp hội chẩn ca khó</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING & SCREENING POLICY SECTION -->
+    <section class="py-20 bg-nemos-blueDark/60 border-t border-nemos-blue/20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-widest text-nemos-gold font-bold block mb-2">// CHÍNH SÁCH ĐĂNG KÝ RÕ RÀNG</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white">CHÍNH SÁCH ĐĂNG KÝ & SÀNG LỌC</h2>
+                <p class="text-slate-400 mt-4">Để đảm bảo chất lượng đào tạo và tương tác cao nhất, Nemos Việt Nam chỉ tiếp nhận các học viên nghiêm túc đáp ứng đủ tiêu chí.</p>
+            </div>
+
+            <!-- Khối hiển thị 2 diện học viên -->
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                
+                <!-- Thẻ 1: Khách hàng chưa là đại lý -->
+                <div class="bg-nemos-cardBg border border-nemos-blue/40 rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden transition-all duration-300 hover:border-nemos-gold/45">
+                    <div class="space-y-6">
+                        <div class="pb-4 border-b border-nemos-blue/30">
+                            <span class="text-xs font-semibold text-slate-400 uppercase tracking-widest block mb-1">DÀNH CHO</span>
+                            <h3 class="text-lg font-bold text-white">Chủ Spa Chưa Phân Phối Sản Phẩm Nemos</h3>
+                        </div>
+                        
+                        <div class="py-2">
+                            <p class="text-slate-400 text-xs">Mức phí tham gia trọn gói:</p>
+                            <p class="text-3xl font-extrabold text-nemos-gold mt-1">9.999.999đ <span class="text-xs font-normal text-slate-400">/ khóa học 3 ngày</span></p>
+                        </div>
+
+                        <!-- Quyền lợi cam kết -->
+                        <div class="space-y-3 pt-2">
+                            <p class="text-xs font-bold text-white uppercase tracking-wider"><i class="fas fa-gift text-nemos-gold mr-1.5"></i> Chính sách đặc biệt hoàn phí:</p>
+                            <div class="p-3 bg-nemos-dark/50 rounded-xl border border-nemos-gold/20">
+                                <p class="text-xs text-slate-300 leading-relaxed">
+                                    <strong class="text-white">Hoàn trả 100% học phí</strong> dưới dạng sản phẩm mỹ phẩm cao cấp nếu anh/chị quyết định ký hợp đồng trở thành Đại lý của Nemos trong vòng 30 ngày sau khóa học kết thúc.
+                                </p>
+                            </div>
+                            <p class="text-[11px] text-slate-400 leading-relaxed italic">
+                                * Tạo điều kiện tối đa giúp chủ Spa vừa củng cố chuyên môn vừa tự tay trải nghiệm hệ sinh thái dược mỹ phẩm Nemos chất lượng thực tế.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="pt-8">
+                        <a href="#register-form" class="block w-full py-3.5 text-center text-xs font-bold uppercase tracking-wider text-white border border-nemos-gold/50 rounded-xl hover:bg-nemos-gold hover:text-nemos-dark transition-all duration-300">
+                            Đăng Ký Đóng Phí & Xét Duyệt
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Thẻ 2: Khách hàng là đại lý hiện tại -->
+                <div class="bg-nemos-cardBg border-2 border-nemos-gold rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden shadow-xl shadow-nemos-gold/5">
+                    <div class="absolute top-0 right-0 bg-nemos-gold text-nemos-dark text-[10px] uppercase tracking-widest font-bold py-1 px-4 rounded-bl-xl">
+                        Đặc Quyền Đại Lý
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="pb-4 border-b border-nemos-blue/30">
+                            <span class="text-xs font-semibold text-nemos-gold uppercase tracking-widest block mb-1">DÀNH CHO</span>
+                            <h3 class="text-lg font-bold text-white">Đại Lý Hiện Tại Của Nemos</h3>
+                        </div>
+                        
+                        <div class="py-2">
+                            <p class="text-slate-400 text-xs">Chi phí tham gia huấn luyện:</p>
+                            <p class="text-3xl font-extrabold text-white mt-1">TÀI TRỢ 100% <span class="text-xs font-normal text-slate-400">/ học phí</span></p>
+                        </div>
+
+                        <!-- Điều kiện bắt buộc -->
+                        <div class="space-y-3 pt-2">
+                            <p class="text-xs font-bold text-nemos-gold uppercase tracking-wider"><i class="fas fa-exclamation-circle mr-1.5"></i> Điều kiện tài trợ bắt buộc:</p>
+                            <div class="p-3 bg-nemos-dark/50 rounded-xl border border-nemos-blue/30">
+                                <p class="text-xs text-slate-300 leading-relaxed">
+                                    Cơ sở đang vận hành thực tế các <strong class="text-white">công nghệ laser / công nghệ cao điều trị</strong> tại Spa để đảm bảo có thể ứng dụng bài học thực hành được ngay, tránh lãng phí ghế ngồi đào tạo chất lượng.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-8">
+                        <a href="#register-form" class="block w-full py-3.5 text-center text-xs font-bold uppercase tracking-wider text-nemos-dark bg-gradient-to-r from-nemos-gold to-nemos-goldLight rounded-xl shadow-md hover:shadow-lg hover:shadow-nemos-gold/30 transition-all duration-300">
+                            Đăng Ký Giữ Suất Tài Trợ
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Giải thích nguyên nhân cần sàng lọc -->
+            <div class="mt-16 max-w-3xl mx-auto text-center space-y-4">
+                <h4 class="text-lg font-bold text-white"><i class="fas fa-filter text-nemos-gold mr-1.5"></i> VÌ SAO NEMOS CẦN SÀNG LỌC HỌC VIÊN?</h4>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Nemos Việt Nam tuyệt đối không tổ chức chương trình này với mục đích thương mại hóa khóa học từ học phí của khách hàng. Chúng tôi thu phí và sàng lọc đầu vào để chắc chắn rằng mỗi vị trí ghế ngồi quý giá tại khán phòng đều thuộc về những đối tác nghiêm túc, có định hướng đồng hành lâu dài. Số lượng học viên cực kỳ giới hạn để đảm bảo chất lượng hội chẩn và hỗ trợ cho từng cá nhân.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- REGISTRATION FORM SECTION -->
+    <section id="register-form" class="py-20 bg-nemos-dark relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            
+            <div class="relative bg-nemos-cardBg border border-nemos-blue/40 rounded-3xl p-6 sm:p-10 shadow-2xl">
+                <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-nemos-gold text-nemos-dark font-extrabold text-xs uppercase tracking-widest px-6 py-2.5 rounded-full shadow-lg">
+                    Cổng Tiếp Nhận Hồ Sơ Sàng Lọc
+                </div>
+
+                <div class="text-center mt-4 mb-10">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white">ĐĂNG KÝ GIỮ CHỖ NGAY HÔM NAY</h2>
+                    <p class="text-slate-400 text-sm mt-2 max-w-lg mx-auto">Vui lòng điền chính xác thông tin để chúng tôi liên hệ gửi bài kiểm tra năng lực đầu vào.</p>
+                </div>
+
+                <!-- Form đăng ký đề xuất chuẩn -->
+                <form id="nemosForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <!-- Họ và tên -->
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-slate-300 uppercase block">Họ và tên <span class="text-red-500">*</span></label>
+                            <input type="text" id="fullname" required placeholder="Nguyễn Văn A" class="w-full bg-nemos-dark/60 border border-nemos-blue/40 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-nemos-gold transition-colors duration-300">
+                        </div>
+                        <!-- Số điện thoại -->
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-slate-300 uppercase block">Số điện thoại <span class="text-red-500">*</span></label>
+                            <input type="tel" id="phone" required placeholder="0985138813" class="w-full bg-nemos-dark/60 border border-nemos-blue/40 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-nemos-gold transition-colors duration-300">
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <!-- Tên Spa -->
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-slate-300 uppercase block">Tên Spa / Thẩm mỹ viện <span class="text-red-500">*</span></label>
+                            <input type="text" id="spaname" required placeholder="Nemos Beauty Spa" class="w-full bg-nemos-dark/60 border border-nemos-blue/40 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-nemos-gold transition-colors duration-300">
+                        </div>
+                        <!-- Tỉnh thành -->
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-slate-300 uppercase block">Tỉnh / Thành phố <span class="text-red-500">*</span></label>
+                            <input type="text" id="city" required placeholder="Hà Nội" class="w-full bg-nemos-dark/60 border border-nemos-blue/40 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-nemos-gold transition-colors duration-300">
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <!-- Là Đại lý Nemos chưa? -->
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-slate-300 uppercase block">Anh/chị hiện có phải Đại lý Nemos không? <span class="text-red-500">*</span></label>
+                            <select id="isAgent" required class="w-full bg-nemos-dark/60 border border-nemos-blue/40 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-nemos-gold transition-colors duration-300">
+                                <option value="" disabled selected>Vui lòng lựa chọn...</option>
+                                <option value="Có, tôi là đại lý hiện tại">Có, tôi là đại lý hiện tại</option>
+                                <option value="Chưa, tôi là chủ Spa mới">Chưa, tôi là chủ Spa mới</option>
+                            </select>
+                        </div>
+                        <!-- Có công nghệ cao không? -->
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-slate-300 uppercase block">Cơ sở có công nghệ laser/công nghệ cao không? <span class="text-red-500">*</span></label>
+                            <select id="hasLaser" required class="w-full bg-nemos-dark/60 border border-nemos-blue/40 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-nemos-gold transition-colors duration-300">
+                                <option value="" disabled selected>Vui lòng lựa chọn...</option>
+                                <option value="Có, đang vận hành thực tế">Có, đang vận hành thực tế</option>
+                                <option value="Có máy nhưng chưa vận hành tốt">Có máy nhưng chưa vận hành tốt</option>
+                                <option value="Chưa đầu tư công nghệ cao">Chưa đầu tư công nghệ cao</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Tình trạng thường gặp -->
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-slate-300 uppercase block">Tình trạng sắc tố/ca da khó anh/chị thường gặp nhất là gì? <span class="text-red-500">*</span></label>
+                        <textarea id="issue" required rows="3" placeholder="Ví dụ: Da khách bị loang sạm, dội sắc tố sau điều trị laser năng lượng cao..." class="w-full bg-nemos-dark/60 border border-nemos-blue/40 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-nemos-gold transition-colors duration-300 resize-none"></textarea>
+                    </div>
+
+                    <!-- Mong muốn -->
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-slate-300 uppercase block">Anh/chị mong muốn nhận được điều gì sau chương trình? <span class="text-red-500">*</span></label>
+                        <textarea id="desire" required rows="2" placeholder="Ví dụ: Biết cách xây dựng phác đồ phối hợp công nghệ và bôi thoa phục hồi tốt hơn..." class="w-full bg-nemos-dark/60 border border-nemos-blue/40 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-nemos-gold transition-colors duration-300 resize-none"></textarea>
+                    </div>
+
+                    <div class="pt-4">
+                        <button type="submit" class="w-full py-4 rounded-2xl font-bold uppercase tracking-widest text-nemos-dark bg-gradient-to-r from-nemos-gold to-nemos-goldLight shadow-lg shadow-nemos-gold/30 hover:shadow-xl hover:shadow-nemos-gold/45 transition-all duration-300 transform hover:-translate-y-0.5">
+                            Nộp Thông Tin Xét Duyệt Ngay <i class="fas fa-paper-plane ml-1.5"></i>
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER CTA SECTION -->
+    <footer class="bg-nemos-blueDark py-16 border-t border-nemos-gold/25 relative overflow-hidden">
+        <!-- Ánh sáng hắt đáy tinh tế -->
+        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-5xl h-36 bg-nemos-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-12 gap-8 items-center border-b border-nemos-blue/30 pb-12">
+                
+                <div class="md:col-span-8 text-center md:text-left space-y-4">
+                    <span class="text-xs text-nemos-gold font-bold uppercase tracking-widest block"><i class="fas fa-exclamation-circle"></i> Số lượng ghế có hạn</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white leading-tight">Đăng ký ngay để nhận bài test sàng lọc và giữ chỗ tại Masterclass "Trạm Cứu Hộ Sắc Tố".</h2>
+                    <p class="text-slate-400 text-sm max-w-2xl">
+                        Nemos Việt Nam – Đồng hành cùng các cơ sở làm đẹp phát triển bằng chuyên môn, tư duy thực chiến và phác đồ có chiều sâu.
+                    </p>
+                </div>
+
+                <div class="md:col-span-4 flex justify-center md:justify-end">
+                    <!-- Nút hành động cuối đã sửa thành "Đăng ký ngay" chuyển hướng tới form -->
+                    <a href="#register-form" class="inline-flex items-center space-x-3 px-8 py-4 rounded-2xl text-sm font-bold uppercase tracking-widest text-nemos-dark bg-gradient-to-r from-nemos-gold to-nemos-goldLight shadow-lg shadow-nemos-gold/25 hover:shadow-xl hover:shadow-nemos-gold/40 transition-all duration-300 transform hover:-translate-y-1">
+                        <span>Đăng Ký Ngay</span>
+                        <i class="fas fa-arrow-right transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Footer Bottom Information -->
+            <div class="pt-12 flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Bản quyền & Thương hiệu -->
+                <div class="text-center md:text-left space-y-2">
+                    <div class="flex items-center justify-center md:justify-start space-x-3">
+                        <img src="Workshop tháng 7_2.png" alt="Nemos Vietnam" class="h-6 w-auto opacity-75">
+                        <span class="text-white font-bold text-sm">Nemos Việt Nam</span>
+                    </div>
+                    <p class="text-xs text-slate-500">© 2026 Nemos Việt Nam. Tất cả quyền được bảo lưu.</p>
+                </div>
+
+                <!-- Hastags & Thông tin liên kết -->
+                <div class="text-center md:text-right space-y-2">
+                    <div class="flex flex-wrap justify-center md:justify-end gap-2 text-[10px] text-slate-400 font-medium">
+                        <span>#NemosVietNam</span>
+                        <span>•</span>
+                        <span>#TramCuuHoSacTo</span>
+                        <span>•</span>
+                        <span>#MasterclassLaserKeDon</span>
+                        <span>•</span>
+                        <span>#HuyenNemos</span>
+                        <span>•</span>
+                        <span>#ChamSocDaChuyenSau</span>
+                    </div>
+                    <div class="flex items-center justify-center md:justify-end space-x-4 text-xs text-slate-400">
+                        <a href="tel:0985138813" class="hover:text-nemos-gold"><i class="fas fa-phone-alt"></i> 098 513 88 13</a>
+                        <span>|</span>
+                        <a href="mailto:nemosvietnam@gmail.com" class="hover:text-nemos-gold"><i class="fas fa-envelope"></i> nemosvietnam@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SUCCESS NOTIFICATION MODAL -->
+    <div id="successModal" class="fixed inset-0 z-50 flex items-center justify-center px-4 hidden">
+        <div class="absolute inset-0 bg-nemos-dark/80 backdrop-blur-md"></div>
+        <div class="relative bg-nemos-cardBg border-2 border-nemos-gold rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl text-center transform scale-95 transition-all duration-300">
+            <div class="w-16 h-16 bg-nemos-gold/15 text-nemos-gold rounded-full flex items-center justify-center text-3xl mx-auto mb-4 border border-nemos-gold/30">
+                <i class="fas fa-check-double animate-bounce"></i>
+            </div>
+            <h3 class="text-xl font-extrabold text-white">ĐĂNG KÝ THÀNH CÔNG</h3>
+            <p class="text-sm text-slate-300 mt-2 leading-relaxed">
+                Cảm ơn anh/chị <span id="modalFullname" class="font-bold text-nemos-gold"></span> đã gửi hồ sơ tham dự chương trình <strong class="text-white">"Trạm Cứu Hộ Sắc Tố"</strong>.
+            </p>
+            <div class="my-4 p-4 bg-nemos-dark/60 rounded-xl border border-nemos-blue/30 text-left text-xs text-slate-400 space-y-1.5">
+                <p>• <strong>Số điện thoại:</strong> <span id="modalPhone"></span></p>
+                <p>• <strong>Spa:</strong> <span id="modalSpa"></span></p>
+                <p>• <strong>Địa điểm:</strong> <span id="modalCity"></span></p>
+            </div>
+            <p class="text-xs text-slate-400 leading-relaxed">
+                Hệ thống đã ghi nhận bài đăng ký. Hội đồng sàng lọc của Nemos Việt Nam sẽ liên hệ qua điện thoại trong vòng 24 giờ tới để hoàn tất thủ tục xét duyệt.
+            </p>
+            <button onclick="closeModal()" class="w-full mt-6 py-3 rounded-xl font-bold uppercase tracking-wider text-nemos-dark bg-gradient-to-r from-nemos-gold to-nemos-goldLight shadow-md hover:shadow-lg hover:shadow-nemos-gold/20 transition-all duration-300">
+                Xác Nhận & Đóng
+            </button>
+        </div>
+    </div>
+
+    <!-- SCRIPTS IMPLEMENTATION -->
+    <script>
+        // LOGIC CHUYỂN TABS CHO CHƯƠNG TRÌNH ĐÀO TẠO
+        function switchTab(tabIndex) {
+            // Danh sách các ID tab và nút tab tương ứng
+            const totalTabs = 3;
+            for (let i = 1; i <= totalTabs; i++) {
+                const btn = document.getElementById(`tab-btn-${i}`);
+                const content = document.getElementById(`tab-content-${i}`);
+                
+                if (i === tabIndex) {
+                    // Kích hoạt tab hiện tại
+                    btn.className = "flex-1 py-4 px-3 sm:px-6 text-center font-bold text-sm sm:text-base rounded-2xl border transition-all duration-300 focus:outline-none bg-nemos-gold text-nemos-dark border-nemos-gold shadow-lg shadow-nemos-gold/25";
+                    content.classList.remove('hidden');
+                } else {
+                    // Ẩn các tab khác
+                    btn.className = "flex-1 py-4 px-3 sm:px-6 text-center font-bold text-sm sm:text-base rounded-2xl border transition-all duration-300 focus:outline-none bg-nemos-cardBg/60 text-slate-400 border-nemos-blue/30 hover:border-nemos-gold/50";
+                    content.classList.add('hidden');
+                }
+            }
+        }
+
+        // LOGIC CHẠY BỘ ĐẾM NGƯỢC 9 NGÀY DYNAMIC VÀ CHÍNH XÁC
+        // Tính mốc 9 ngày kể từ khi truy cập trang hoặc đặt mốc cụ thể trong tháng 7 năm 2026
+        let countdownTarget = localStorage.getItem('nemos_countdown_target');
+        if (!countdownTarget) {
+            // Nếu chưa có, thiết lập mốc 9 ngày từ hiện tại
+            const nineDaysInMs = 9 * 24 * 60 * 60 * 1000;
+            countdownTarget = new Date().getTime() + nineDaysInMs;
+            localStorage.setItem('nemos_countdown_target', countdownTarget);
+        } else {
+            countdownTarget = parseInt(countdownTarget);
+            // Nếu mốc cũ đã quá hạn trong quá khứ, hãy reset lại 9 ngày mới để giữ nguyên tính thẩm mỹ
+            if (countdownTarget < new Date().getTime()) {
+                const nineDaysInMs = 9 * 24 * 60 * 60 * 1000;
+                countdownTarget = new Date().getTime() + nineDaysInMs;
+                localStorage.setItem('nemos_countdown_target', countdownTarget);
+            }
+        }
+
+        const countdownInterval = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countdownTarget - now;
+
+            // Tính toán Ngày, Giờ, Phút, Giây
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Gán hiển thị, đảm bảo luôn có số 0 ở trước nếu < 10
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+
+            // Nếu hết thời gian đếm ngược, đặt lại chu kỳ mới
+            if (distance < 0) {
+                const nineDaysInMs = 9 * 24 * 60 * 60 * 1000;
+                countdownTarget = new Date().getTime() + nineDaysInMs;
+                localStorage.setItem('nemos_countdown_target', countdownTarget);
+            }
+        }, 1000);
+
+        // LOGIC FORM SUBMISSION VÀ HIỂN THỊ MODAL THÔNG BÁO TÙY BIẾN
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Ngăn trình duyệt tự load lại trang
+
+            // Lấy dữ liệu người dùng nhập
+            const fullname = document.getElementById("fullname").value;
+            const phone = document.getElementById("phone").value;
+            const spaname = document.getElementById("spaname").value;
+            const city = document.getElementById("city").value;
+
+            // Đổ dữ liệu vào modal thành công
+            document.getElementById("modalFullname").innerText = fullname;
+            document.getElementById("modalPhone").innerText = phone;
+            document.getElementById("modalSpa").innerText = spaname;
+            document.getElementById("modalCity").innerText = city;
+
+            // Hiện modal thành công mượt mà
+            const successModal = document.getElementById("successModal");
+            successModal.classList.remove("hidden");
+            document.body.style.overflow = "hidden"; // Ngăn cuộn trang khi hiện popup
+
+            // Reset form sau khi gửi thành công
+            document.getElementById("nemosForm").reset();
+        }
+
+        // ĐÓNG POPUP THÀNH CÔNG
+        function closeModal() {
+            const successModal = document.getElementById("successModal");
+            successModal.classList.add("hidden");
+            document.body.style.overflow = "auto"; // Cho phép cuộn lại bình thường
+        }
+    </script>
+</body>
+</html>
