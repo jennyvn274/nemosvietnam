@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<!-- Jenny.vn cache fixed version: 20260708-2 -->
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Anti-cache for GitHub Pages / browser cache -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <title>Trạm Cứu Hộ Sắc Tố - Masterclass & Workshop Nemos Việt Nam</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            nemos: {
+              blue: '#253d74',
+              blueDark: '#121f3d',
+              blueLight: '#3a5796',
+              gold: '#be9313',
+              goldLight: '#dfb233',
+              dark: '#0d1627',
+              cardBg: '#16233f'
+            }
+          },
+          fontFamily: {
+            sans: ['"Be Vietnam Pro"', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    :root {
+      --dark: #0d1627;
+      --blue: #253d74;
+      --blue-dark: #121f3d;
+      --card: #16233f;
+      --gold: #be9313;
+      --gold-light: #dfb233;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Be Vietnam Pro", sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--dark);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--gold);
+      border-radius: 999px;
+    }
+
+    .section-eyebrow {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      color: #fff;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 900;
+      line-height: 1.18;
+    }
+
+    .section-desc {
+      margin-top: 1rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .gold-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      color: var(--dark);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      box-shadow: 0 16px 35px rgba(190, 147, 19, 0.2);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .gold-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 45px rgba(190, 147, 19, 0.35);
+    }
+
+    .glass-card {
+      background: rgba(22, 35, 63, 0.72);
+      border: 1px solid rgba(58, 87, 150, 0.45);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(12px);
+    }
+
+    .soft-light {
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(72px);
+      pointer-events: none;
+      opacity: 0.55;
+    }
+
+    .tab-btn {
+      flex: 1;
+      border: 1px solid rgba(58, 87, 150, 0.45);
+      border-radius: 1rem;
+      padding: 1rem 0.75rem;
+      background: rgba(22, 35, 63, 0.72);
+      color: #cbd5e1;
+      font-weight: 900;
+      text-align: center;
+      transition: all 0.25s ease;
+    }
+
+    .tab-btn span {
+      display: block;
+      margin-top: 0.25rem;
+      font-size: 0.625rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: inherit;
+      opacity: 0.8;
+    }
+
+    .tab-btn.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--dark);
+      box-shadow: 0 16px 35px rgba(190, 147, 19, 0.22);
+    }
+
+    .form-field {
+      width: 100%;
+      border: 1px solid rgba(58, 87, 150, 0.55);
+      border-radius: 0.75rem;
+      background: rgba(13, 22, 39, 0.65);
+      padding: 0.85rem 1rem;
+      color: #fff;
+      font-size: 0.875rem;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .form-field:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(190, 147, 19, 0.15);
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #cbd5e1;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .hidden-section {
+      display: none;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-in {
+      animation: fadeInUp 0.35s ease both;
+    }
+  </style>
+</head>
+
+<body class="antialiased">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-nemos-gold/30 bg-nemos-blue/95 backdrop-blur-md shadow-lg">
+    <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <a href="#" class="flex items-center gap-3" aria-label="Nemos Việt Nam">
+        <img
+          src="./title-workshop.png?v=20260708-2"
+          alt="Nemos Vietnam Logo"
+          class="h-10 w-auto object-contain sm:h-12"
+          onerror="this.onerror=null;this.src='https://placehold.co/180x50/253d74/ffffff?text=NEMOS+VIETNAM';"
+        />
+      </a>
+
+      <nav class="hidden items-center gap-6 text-sm font-semibold md:flex">
+        <a href="tel:0985138813" class="flex items-center gap-2 text-slate-100 transition hover:text-nemos-gold">
+          <i class="fa-solid fa-phone text-nemos-gold"></i>
+          <span>098 513 88 13</span>
+        </a>
+        <a href="mailto:nemosvietnam@gmail.com" class="flex items-center gap-2 text-slate-100 transition hover:text-nemos-gold">
+          <i class="fa-solid fa-envelope text-nemos-gold"></i>
+          <span>nemosvietnam@gmail.com</span>
+        </a>
+        <a href="#register-form" class="gold-btn px-5 py-2.5 text-xs">Đăng ký tham dự</a>
+      </nav>
+
+      <div class="flex items-center gap-3 md:hidden">
+        <a href="tel:0985138813" class="rounded-full border border-nemos-gold/40 bg-nemos-dark p-2.5 text-nemos-gold">
+          <i class="fa-solid fa-phone"></i>
+        </a>
+        <a href="#register-form" class="gold-btn px-4 py-2 text-xs">Đăng ký</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="relative overflow-hidden bg-gradient-to-b from-nemos-blueDark via-nemos-dark to-nemos-dark py-12 lg:py-20">
+      <div class="soft-light left-1/4 top-1/4 h-96 w-96 bg-nemos-blue/30"></div>
+      <div class="soft-light bottom-1/4 right-1/4 h-80 w-80 bg-nemos-gold/20"></div>
+
+      <div class="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+        <div class="space-y-6 text-center lg:col-span-7 lg:text-left">
+          <span class="inline-flex items-center rounded-full border border-nemos-gold/30 bg-nemos-gold/15 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-nemos-gold">
+            <i class="fa-solid fa-user-doctor mr-2"></i>
+            Đào tạo thực chiến chuyên sâu
+          </span>
+
+          <div class="flex justify-center lg:justify-start">
+            <img
+              src="data:image/png;base64,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"
+              alt="Nemos Masterclass & Workshop - Trạm Cứu Hộ Sắc Tố"
+              class="h-auto w-full max-w-[580px] drop-shadow-[0_14px_28px_rgba(37,61,116,0.35)]"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x250/253d74/ffffff?text=TR%E1%BA%A0M+C%E1%BB%A8U+H%E1%BB%98+S%E1%BA%AEC+T%E1%BB%90';"
+            />
+          </div>
+
+          <p class="mx-auto max-w-2xl text-lg font-light leading-relaxed text-slate-300 md:text-xl lg:mx-0">
+            Khi công nghệ đơn thuần chưa hiệu quả – cần tư duy thực chiến của chuyên gia.
+          </p>
+
+          <div class="mx-auto h-1 w-20 bg-gradient-to-r from-nemos-gold to-nemos-blue lg:mx-0"></div>
+
+          <div class="mx-auto max-w-2xl space-y-4 text-base leading-relaxed text-slate-400 lg:mx-0">
+            <p>
+              Nemos Việt Nam chính thức mở cổng đăng ký chương trình Masterclass & Workshop chuyên sâu
+              <strong class="text-white">“Trạm Cứu Hộ Sắc Tố”</strong> – khóa đào tạo thực chiến dành cho Chủ Spa,
+              Thẩm mỹ viện và Đại lý đang vận hành công nghệ cao nhưng vẫn gặp khó trong tối ưu hiệu quả điều trị sắc tố.
+            </p>
+            <p>
+              Chương trình được dẫn dắt trực tiếp bởi <strong class="text-nemos-gold">Chuyên gia Huyền Nemos</strong>,
+              tập trung vào tư duy phối hợp giữa công nghệ – hoạt chất – phục hồi nền da – hội chẩn ca thực tế.
+            </p>
+          </div>
+
+          <div class="mx-auto grid max-w-lg grid-cols-2 gap-4 pt-4 text-left md:grid-cols-3 lg:mx-0">
+            <article class="rounded-xl border border-nemos-blue/30 bg-nemos-cardBg/60 p-3.5">
+              <p class="text-xs text-slate-400">Thời lượng</p>
+              <p class="mt-1 text-sm font-bold text-white">3 ngày trực tiếp</p>
+            </article>
+            <article class="rounded-xl border border-nemos-blue/30 bg-nemos-cardBg/60 p-3.5">
+              <p class="text-xs text-slate-400">Dẫn dắt bởi</p>
+              <p class="mt-1 text-sm font-bold text-white">Huyền Nemos</p>
+            </article>
+            <article class="col-span-2 rounded-xl border border-nemos-gold/25 bg-nemos-cardBg/60 p-3.5 md:col-span-1">
+              <p class="text-xs text-nemos-gold">Số lượng vé</p>
+              <p class="mt-1 text-sm font-bold text-nemos-gold">Cực kỳ giới hạn</p>
+            </article>
+          </div>
+        </div>
+
+        <aside class="relative lg:col-span-5">
+          <div class="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-nemos-gold to-nemos-blue opacity-30 blur-lg"></div>
+          <div class="glass-card relative rounded-3xl p-6 sm:p-8">
+            <div class="border-b border-nemos-blue/30 pb-6 text-center">
+              <p class="text-xs font-bold uppercase tracking-[0.16em] text-nemos-gold">Chương trình đào tạo thực chiến</p>
+              <h1 class="mt-1 text-xl font-extrabold text-white">Cơ hội sở hữu vé tham dự</h1>
+              <p class="mt-2 text-xs text-slate-400">Cổng đăng ký sẽ đóng sau khi đủ số lượng học viên sàng lọc đạt yêu cầu.</p>
+            </div>
+
+            <div class="py-6">
+              <p class="mb-4 text-center text-xs font-bold uppercase tracking-[0.14em] text-slate-400">Cổng đăng ký sẽ đóng sau:</p>
+              <div class="grid grid-cols-4 gap-2.5 text-center" id="countdown">
+                <div class="rounded-xl border border-nemos-gold/35 bg-nemos-dark p-3">
+                  <span id="days" class="block text-2xl font-black tracking-tight text-nemos-gold sm:text-3xl">09</span>
+                  <span class="mt-1 block text-[10px] uppercase text-slate-400">Ngày</span>
+                </div>
+                <div class="rounded-xl border border-nemos-blue/50 bg-nemos-dark p-3">
+                  <span id="hours" class="block text-2xl font-black tracking-tight text-white sm:text-3xl">00</span>
+                  <span class="mt-1 block text-[10px] uppercase text-slate-400">Giờ</span>
+                </div>
+                <div class="rounded-xl border border-nemos-blue/50 bg-nemos-dark p-3">
+                  <span id="minutes" class="block text-2xl font-black tracking-tight text-white sm:text-3xl">00</span>
+                  <span class="mt-1 block text-[10px] uppercase text-slate-400">Phút</span>
+                </div>
+                <div class="rounded-xl border border-nemos-blue/50 bg-nemos-dark p-3">
+                  <span id="seconds" class="block text-2xl font-black tracking-tight text-nemos-gold sm:text-3xl">00</span>
+                  <span class="mt-1 block text-[10px] uppercase text-slate-400">Giây</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="#register-form" class="gold-btn w-full rounded-2xl py-4 text-sm">
+              <i class="fa-solid fa-pen-to-square"></i>
+              Gửi đăng ký sàng lọc ngay
+            </a>
+
+            <div class="mt-4 flex items-center justify-center gap-4 text-xs text-slate-400">
+              <span><i class="fa-solid fa-shield-halved mr-1 text-nemos-gold"></i>Bảo mật thông tin</span>
+              <span>•</span>
+              <span><i class="fa-solid fa-circle-check mr-1 text-nemos-gold"></i>Liên hệ trong 24h</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Why -->
+    <section class="relative border-t border-nemos-blue/20 bg-nemos-dark py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto mb-16 max-w-3xl text-center">
+          <span class="section-eyebrow">// Thực trạng thẩm mỹ công nghệ cao</span>
+          <h2 class="section-title">Vì sao chương trình này được tổ chức?</h2>
+          <p class="section-desc">
+            Trong kỷ nguyên thẩm mỹ công nghệ cao, nhiều cơ sở đã đầu tư hàng trăm triệu đến hàng tỷ đồng cho máy móc hiện đại
+            nhưng vẫn loay hoay trong vòng xoáy biến chứng điều trị.
+          </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-5">
+          <article class="flex flex-col justify-center rounded-2xl border border-nemos-blue/20 bg-nemos-cardBg/30 p-6 lg:col-span-2">
+            <h3 class="text-xl font-extrabold text-nemos-gold">Thực tế phũ phàng...</h3>
+            <p class="mt-4 text-sm leading-relaxed text-slate-300">
+              Máy móc không sai. Vấn đề nằm ở cách đọc nền da, chọn thông số, phối hợp hoạt chất và kiểm soát phục hồi sau xử lý.
+            </p>
+            <p class="mt-4 text-sm leading-relaxed text-slate-300">
+              Đó là lý do Nemos Việt Nam xây dựng chương trình <strong class="text-white">“Trạm Cứu Hộ Sắc Tố”</strong> –
+              nơi các bài toán khó được mổ xẻ trực diện bằng tư duy chuyên môn và kinh nghiệm thực chiến.
+            </p>
+          </article>
+
+          <div id="painGrid" class="grid gap-4 sm:grid-cols-2 lg:col-span-3"></div>
+        </div>
+
+        <div class="mx-auto mt-12 max-w-4xl rounded-2xl border border-nemos-gold/30 bg-gradient-to-r from-nemos-blue/40 to-nemos-blueDark p-6 text-center">
+          <p class="text-base text-slate-200 sm:text-lg">
+            <i class="fa-solid fa-triangle-exclamation mr-2 text-nemos-gold"></i>
+            Gặp ca da khó nhưng <span class="font-extrabold text-nemos-gold">thiếu tư duy hội chẩn</span> và sửa sai phác đồ
+            là rào cản lớn nhất khiến Spa mất uy tín với khách hàng.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Target audience -->
+    <section class="relative bg-nemos-blueDark/60 py-20">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+        <div>
+          <span class="section-eyebrow">// Định vị học viên phù hợp</span>
+          <h2 class="section-title">Chương trình này dành cho ai?</h2>
+          <p class="section-desc">
+            Đây là khóa học có sự chọn lọc dành cho những cơ sở thẩm mỹ thực sự muốn hiểu sâu, làm đúng và tự tay làm chủ phác đồ.
+          </p>
+          <div id="audienceList" class="mt-8 space-y-4"></div>
+        </div>
+
+        <article class="relative">
+          <div class="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-nemos-gold to-nemos-blue opacity-25 blur-lg"></div>
+          <div class="glass-card relative rounded-2xl p-8">
+            <div class="text-4xl text-nemos-gold"><i class="fa-solid fa-quote-left"></i></div>
+            <p class="mt-5 text-lg font-light italic leading-relaxed text-slate-200">
+              “Đây không phải là một khóa học lý thuyết thông thường. Đây là chương trình chuyên biệt dành cho những cơ sở
+              thực sự mong muốn hiểu sâu – làm đúng – sửa sai – ứng dụng thực tế được ngay tại chỗ sau khi kết thúc đào tạo.”
+            </p>
+            <div class="mt-6 flex items-center gap-4 border-t border-nemos-blue/25 pt-6">
+              <div class="h-12 w-12 overflow-hidden rounded-full border-2 border-nemos-gold bg-nemos-blue">
+                <img
+                  src="./huyen-nemos.png?v=20260708-2"
+                  alt="Chuyên gia Huyền Nemos"
+                  class="h-full w-full object-cover"
+                  onerror="this.onerror=null;this.src='https://placehold.co/100x100/121f3d/ffffff?text=CEO';"
+                />
+              </div>
+              <div>
+                <h3 class="text-sm font-extrabold text-white">Chuyên gia Huyền Nemos</h3>
+                <p class="text-xs text-nemos-gold">CEO & Founder Nemos Việt Nam</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Core values -->
+    <section class="relative bg-nemos-dark py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto mb-16 max-w-3xl text-center">
+          <span class="section-eyebrow">// Khoa học & thực tiễn</span>
+          <h2 class="section-title">Giá trị cốt lõi của Masterclass</h2>
+          <p class="section-desc">
+            Sau 3 ngày đào tạo trực tiếp, học viên được trang bị hệ thống kiến thức và công cụ ứng dụng vào ca da thực tế.
+          </p>
+        </div>
+
+        <div id="valueGrid" class="grid gap-8 md:grid-cols-2"></div>
+      </div>
+    </section>
+
+    <!-- Curriculum -->
+    <section class="relative border-y border-nemos-blue/20 bg-nemos-blueDark/40 py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto mb-16 max-w-3xl text-center">
+          <span class="section-eyebrow">// Khung đào tạo chi tiết</span>
+          <h2 class="section-title">Lộ trình đào tạo 3 ngày trực tiếp</h2>
+          <p class="section-desc">Chọn từng ngày để xem nội dung chi tiết của khóa học.</p>
+        </div>
+
+        <div id="tabButtons" class="mx-auto mb-12 flex max-w-2xl justify-center gap-2 md:gap-4"></div>
+        <div id="tabPanels" class="mx-auto max-w-4xl"></div>
+      </div>
+    </section>
+
+    <!-- Expert -->
+    <section class="relative bg-nemos-dark py-20">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+        <div class="relative lg:col-span-5">
+          <div class="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-nemos-gold to-nemos-blue opacity-30 blur-lg"></div>
+          <div class="relative flex items-center justify-center overflow-hidden rounded-3xl border border-nemos-gold/40 bg-white p-4 shadow-2xl shadow-nemos-gold/10 min-h-[520px]">
+            <img
+              src="./huyen-nemos.png?v=20260708-2"
+              alt="Chuyên gia Huyền Nemos"
+              class="max-h-[500px] w-auto object-contain"
+              onerror="this.onerror=null;this.src='https://placehold.co/400x500/ffffff/0d1627?text=Chuyen+Gia+Huyen+Nemos';"
+            />
+            <div class="absolute bottom-6 left-6 right-6 rounded-2xl border border-nemos-gold/50 bg-nemos-blue/95 p-4 text-center backdrop-blur-md">
+              <p class="text-xs font-bold uppercase tracking-[0.16em] text-nemos-gold">Người sáng lập Nemos Việt Nam</p>
+              <h3 class="mt-1 text-lg font-extrabold text-white">Chuyên gia Huyền Nemos</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-6 lg:col-span-7">
+          <span class="section-eyebrow">// Người dẫn đường tận tâm</span>
+          <h2 class="section-title">Chuyên gia Huyền Nemos</h2>
+          <div class="h-1 w-20 bg-nemos-gold"></div>
+
+          <p class="text-base leading-relaxed text-slate-300">
+            Với kinh nghiệm nhiều năm đào tạo chuyên môn, trực tiếp hội chẩn và đồng hành gỡ rối biến chứng lâm sàng
+            cùng hàng trăm Spa/Thẩm mỹ viện, Chuyên gia Huyền Nemos sẽ dẫn dắt toàn bộ chương trình huấn luyện đặc biệt này.
+          </p>
+
+          <blockquote class="rounded-r-2xl border-l-4 border-nemos-gold bg-nemos-cardBg/40 p-5">
+            <p class="text-sm italic leading-relaxed text-slate-300">
+              “Điểm khác biệt của Masterclass không nằm ở việc trao thêm một vài công thức rập khuôn.
+              Nó nằm ở việc giúp bạn hình thành tư duy tự đọc da – biết sửa sai – phối hợp phác đồ linh hoạt trên mọi ca da thực tế.”
+            </p>
+            <footer class="mt-3 text-right text-xs font-bold text-white">— Chuyên gia Huyền Nemos</footer>
+          </blockquote>
+
+          <div class="grid grid-cols-2 gap-4 pt-4 text-center">
+            <div class="rounded-2xl border border-nemos-blue/20 bg-nemos-cardBg/30 p-4">
+              <span class="block text-2xl font-black text-nemos-gold">100%</span>
+              <span class="text-xs text-slate-400">Kiến thức thực chiến lâm sàng</span>
+            </div>
+            <div class="rounded-2xl border border-nemos-blue/20 bg-nemos-cardBg/30 p-4">
+              <span class="block text-2xl font-black text-nemos-gold">01 kèm 01</span>
+              <span class="text-xs text-slate-400">Trực tiếp hội chẩn ca khó</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="relative border-t border-nemos-blue/20 bg-nemos-blueDark/60 py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto mb-16 max-w-3xl text-center">
+          <span class="section-eyebrow">// Chính sách đăng ký rõ ràng</span>
+          <h2 class="section-title">Chính sách đăng ký & sàng lọc</h2>
+          <p class="section-desc">
+            Để đảm bảo chất lượng đào tạo và tương tác cao nhất, Nemos Việt Nam chỉ tiếp nhận học viên nghiêm túc đáp ứng đủ tiêu chí.
+          </p>
+        </div>
+
+        <div class="mx-auto grid max-w-5xl gap-8 md:grid-cols-2">
+          <article class="flex flex-col justify-between rounded-3xl border border-nemos-blue/40 bg-nemos-cardBg p-6 transition hover:border-nemos-gold/45 sm:p-8">
+            <div>
+              <div class="border-b border-nemos-blue/30 pb-4">
+                <span class="block text-xs font-bold uppercase tracking-[0.16em] text-slate-400">Dành cho</span>
+                <h3 class="mt-1 text-lg font-extrabold text-white">Chủ Spa chưa phân phối sản phẩm Nemos</h3>
+              </div>
+
+              <div class="py-6">
+                <p class="text-xs text-slate-400">Mức phí tham gia trọn gói:</p>
+                <p class="mt-1 text-3xl font-black text-nemos-gold">9.999.999đ <span class="text-xs font-normal text-slate-400">/ khóa học 3 ngày</span></p>
+              </div>
+
+              <div class="space-y-3">
+                <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-white">
+                  <i class="fa-solid fa-gift mr-1.5 text-nemos-gold"></i>Chính sách đặc biệt hoàn phí
+                </p>
+                <div class="rounded-xl border border-nemos-gold/20 bg-nemos-dark/50 p-3">
+                  <p class="text-xs leading-relaxed text-slate-300">
+                    <strong class="text-white">Hoàn trả 100% học phí</strong> dưới dạng sản phẩm mỹ phẩm cao cấp nếu anh/chị ký hợp đồng
+                    trở thành Đại lý của Nemos trong vòng 30 ngày sau khóa học.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <a href="#register-form" class="mt-8 block rounded-xl border border-nemos-gold/50 py-3.5 text-center text-xs font-black uppercase tracking-[0.12em] text-white transition hover:bg-nemos-gold hover:text-nemos-dark">
+              Đăng ký đóng phí & xét duyệt
+            </a>
+          </article>
+
+          <article class="relative flex flex-col justify-between overflow-hidden rounded-3xl border-2 border-nemos-gold bg-nemos-cardBg p-6 shadow-xl shadow-nemos-gold/5 sm:p-8">
+            <div class="absolute right-0 top-0 rounded-bl-xl bg-nemos-gold px-4 py-1 text-[10px] font-black uppercase tracking-[0.16em] text-nemos-dark">
+              Đặc quyền đại lý
+            </div>
+
+            <div>
+              <div class="border-b border-nemos-blue/30 pb-4">
+                <span class="block text-xs font-bold uppercase tracking-[0.16em] text-nemos-gold">Dành cho</span>
+                <h3 class="mt-1 text-lg font-extrabold text-white">Đại lý hiện tại của Nemos</h3>
+              </div>
+
+              <div class="py-6">
+                <p class="text-xs text-slate-400">Chi phí tham gia huấn luyện:</p>
+                <p class="mt-1 text-3xl font-black text-white">Tài trợ 100% <span class="text-xs font-normal text-slate-400">/ học phí</span></p>
+              </div>
+
+              <div class="space-y-3">
+                <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-nemos-gold">
+                  <i class="fa-solid fa-circle-exclamation mr-1.5"></i>Điều kiện tài trợ bắt buộc
+                </p>
+                <div class="rounded-xl border border-nemos-blue/30 bg-nemos-dark/50 p-3">
+                  <p class="text-xs leading-relaxed text-slate-300">
+                    Cơ sở đang vận hành thực tế các <strong class="text-white">công nghệ laser / công nghệ cao điều trị</strong>
+                    để đảm bảo có thể ứng dụng bài học thực hành ngay.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <a href="#register-form" class="gold-btn mt-8 w-full rounded-xl py-3.5 text-xs">Đăng ký giữ suất tài trợ</a>
+          </article>
+        </div>
+
+        <div class="mx-auto mt-16 max-w-3xl text-center">
+          <h3 class="text-lg font-extrabold text-white">
+            <i class="fa-solid fa-filter mr-1.5 text-nemos-gold"></i>Vì sao Nemos cần sàng lọc học viên?
+          </h3>
+          <p class="mt-4 text-sm leading-relaxed text-slate-400">
+            Nemos Việt Nam không tổ chức chương trình này với mục đích thương mại hóa học phí.
+            Việc thu phí và sàng lọc đầu vào giúp đảm bảo mỗi ghế ngồi thuộc về những đối tác nghiêm túc,
+            có định hướng đồng hành lâu dài và sẵn sàng ứng dụng chuyên môn thực tế.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form -->
+    <section id="register-form" class="relative bg-nemos-dark py-20">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6">
+        <div class="glass-card relative rounded-3xl p-6 shadow-2xl sm:p-10">
+          <div class="absolute -top-6 left-1/2 -translate-x-1/2 rounded-full bg-nemos-gold px-6 py-2.5 text-xs font-black uppercase tracking-[0.16em] text-nemos-dark shadow-lg">
+            Cổng tiếp nhận hồ sơ sàng lọc
+          </div>
+
+          <div class="mb-10 mt-4 text-center">
+            <h2 class="text-2xl font-black text-white sm:text-3xl">Đăng ký giữ chỗ ngay hôm nay</h2>
+            <p class="mx-auto mt-2 max-w-lg text-sm text-slate-400">
+              Vui lòng điền chính xác thông tin để chúng tôi liên hệ gửi bài kiểm tra năng lực đầu vào.
+            </p>
+          </div>
+
+          <form id="nemosForm" class="space-y-6" novalidate>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <label>
+                <span class="form-label">Họ và tên <span class="text-red-500">*</span></span>
+                <input class="form-field" type="text" name="fullname" placeholder="Nguyễn Văn A" required />
+              </label>
+              <label>
+                <span class="form-label">Số điện thoại <span class="text-red-500">*</span></span>
+                <input class="form-field" type="tel" name="phone" placeholder="0985138813" required />
+              </label>
+            </div>
+
+            <div class="grid gap-6 sm:grid-cols-2">
+              <label>
+                <span class="form-label">Tên Spa / Thẩm mỹ viện <span class="text-red-500">*</span></span>
+                <input class="form-field" type="text" name="spaname" placeholder="Nemos Beauty Spa" required />
+              </label>
+              <label>
+                <span class="form-label">Tỉnh / Thành phố <span class="text-red-500">*</span></span>
+                <input class="form-field" type="text" name="city" placeholder="Hà Nội" required />
+              </label>
+            </div>
+
+            <div class="grid gap-6 sm:grid-cols-2">
+              <label>
+                <span class="form-label">Anh/chị hiện có phải Đại lý Nemos không? <span class="text-red-500">*</span></span>
+                <select class="form-field" name="isAgent" required>
+                  <option value="" selected disabled>Vui lòng lựa chọn...</option>
+                  <option>Có, tôi là đại lý hiện tại</option>
+                  <option>Chưa, tôi là chủ Spa mới</option>
+                </select>
+              </label>
+              <label>
+                <span class="form-label">Cơ sở có công nghệ laser/công nghệ cao không? <span class="text-red-500">*</span></span>
+                <select class="form-field" name="hasLaser" required>
+                  <option value="" selected disabled>Vui lòng lựa chọn...</option>
+                  <option>Có, đang vận hành thực tế</option>
+                  <option>Có máy nhưng chưa vận hành tốt</option>
+                  <option>Chưa đầu tư công nghệ cao</option>
+                </select>
+              </label>
+            </div>
+
+            <label>
+              <span class="form-label">Tình trạng sắc tố/ca da khó thường gặp nhất là gì? <span class="text-red-500">*</span></span>
+              <textarea class="form-field min-h-[110px] resize-none" name="issue" required placeholder="Ví dụ: Da khách bị loang sạm, dội sắc tố sau điều trị laser năng lượng cao..."></textarea>
+            </label>
+
+            <label>
+              <span class="form-label">Anh/chị mong muốn nhận được điều gì sau chương trình? <span class="text-red-500">*</span></span>
+              <textarea class="form-field min-h-[90px] resize-none" name="desire" required placeholder="Ví dụ: Biết cách xây dựng phác đồ phối hợp công nghệ và bôi thoa phục hồi tốt hơn..."></textarea>
+            </label>
+
+            <button type="submit" class="gold-btn w-full rounded-2xl py-4 text-sm">
+              Nộp thông tin xét duyệt ngay
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="relative overflow-hidden border-t border-nemos-gold/25 bg-nemos-blueDark py-16">
+    <div class="soft-light bottom-0 left-1/2 h-36 w-full max-w-5xl -translate-x-1/2 bg-nemos-gold/20"></div>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid items-center gap-8 border-b border-nemos-blue/30 pb-12 md:grid-cols-12">
+        <div class="space-y-4 text-center md:col-span-8 md:text-left">
+          <span class="block text-xs font-bold uppercase tracking-[0.16em] text-nemos-gold">
+            <i class="fa-solid fa-circle-exclamation"></i> Số lượng ghế có hạn
+          </span>
+          <h2 class="text-2xl font-black leading-tight text-white sm:text-3xl">
+            Đăng ký ngay để nhận bài test sàng lọc và giữ chỗ tại Masterclass “Trạm Cứu Hộ Sắc Tố”.
+          </h2>
+          <p class="max-w-2xl text-sm text-slate-400">
+            Nemos Việt Nam – Đồng hành cùng các cơ sở làm đẹp phát triển bằng chuyên môn, tư duy thực chiến và phác đồ có chiều sâu.
+          </p>
+        </div>
+
+        <div class="flex justify-center md:col-span-4 md:justify-end">
+          <a href="#register-form" class="gold-btn rounded-2xl px-8 py-4 text-sm">
+            Đăng ký ngay <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center justify-between gap-6 pt-12 md:flex-row">
+        <div class="space-y-2 text-center md:text-left">
+          <div class="flex items-center justify-center gap-3 md:justify-start">
+            <img src="./title-workshop.png?v=20260708-2" alt="Nemos Vietnam" class="h-6 w-auto opacity-75" />
+            <span class="text-sm font-extrabold text-white">Nemos Việt Nam</span>
+          </div>
+          <p class="text-xs text-slate-500">© 2026 Nemos Việt Nam. Design by jenny.vn</p>
+        </div>
+
+        <div class="space-y-2 text-center md:text-right">
+          <div class="flex flex-wrap justify-center gap-2 text-[10px] font-medium text-slate-400 md:justify-end">
+            <span>#NemosVietNam</span><span>•</span>
+            <span>#TramCuuHoSacTo</span><span>•</span>
+            <span>#MasterclassLaserKeDon</span><span>•</span>
+            <span>#HuyenNemos</span>
+          </div>
+          <div class="flex items-center justify-center gap-4 text-xs text-slate-400 md:justify-end">
+            <a href="tel:0985138813" class="hover:text-nemos-gold"><i class="fa-solid fa-phone"></i> 098 513 88 13</a>
+            <span>|</span>
+            <a href="mailto:nemosvietnam@gmail.com" class="hover:text-nemos-gold"><i class="fa-solid fa-envelope"></i> nemosvietnam@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Success modal -->
+  <div id="successModal" class="fixed inset-0 z-[60] hidden items-center justify-center px-4">
+    <div class="absolute inset-0 bg-nemos-dark/80 backdrop-blur-md" data-close-modal></div>
+    <div class="glass-card relative w-full max-w-md rounded-3xl border-2 border-nemos-gold p-6 text-center shadow-2xl sm:p-8">
+      <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border border-nemos-gold/30 bg-nemos-gold/15 text-3xl text-nemos-gold">
+        <i class="fa-solid fa-check-double"></i>
+      </div>
+
+      <h3 class="text-xl font-black text-white">Đăng ký thành công</h3>
+      <p class="mt-2 text-sm leading-relaxed text-slate-300">
+        Cảm ơn anh/chị <span id="modalFullname" class="font-extrabold text-nemos-gold"></span>
+        đã gửi hồ sơ tham dự chương trình <strong class="text-white">“Trạm Cứu Hộ Sắc Tố”</strong>.
+      </p>
+
+      <div class="my-4 space-y-1.5 rounded-xl border border-nemos-blue/30 bg-nemos-dark/60 p-4 text-left text-xs text-slate-400">
+        <p>• <strong>Số điện thoại:</strong> <span id="modalPhone"></span></p>
+        <p>• <strong>Spa:</strong> <span id="modalSpa"></span></p>
+        <p>• <strong>Địa điểm:</strong> <span id="modalCity"></span></p>
+      </div>
+
+      <p class="text-xs leading-relaxed text-slate-400">
+        Hệ thống đã ghi nhận bài đăng ký. Hội đồng sàng lọc của Nemos Việt Nam sẽ liên hệ qua điện thoại trong vòng 24 giờ tới.
+      </p>
+
+      <button type="button" id="closeModalBtn" class="gold-btn mt-6 w-full rounded-xl py-3 text-xs">
+        Xác nhận & đóng
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const $ = (selector, scope = document) => scope.querySelector(selector);
+    const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(selector));
+
+
+    /*
+      ================= GOOGLE FORM CONFIG =================
+      Cách dùng:
+      1. Tạo Google Form có đúng các câu hỏi tương ứng.
+      2. Bấm dấu 3 chấm > Lấy đường liên kết được điền sẵn.
+      3. Điền thử dữ liệu mẫu > Lấy liên kết.
+      4. Trong link sẽ có các mã entry.xxxxx. Thay các mã bên dưới bằng mã thật.
+      5. Thay GOOGLE_FORM_ACTION bằng link formResponse thật của Google Form.
+
+      Ví dụ action:
+      https://docs.google.com/forms/d/e/1FAIpQLSe.../formResponse
+    */
+    const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSf0URqPXal91w48AS28nnNcqaiwSkk72lx6oHw32NLzJgvjZw/formResponse';
+
+    const GOOGLE_FORM_FIELDS = {
+      fullname: 'entry.141799294',
+      phone: 'entry.915001618',
+      spaname: 'entry.2082297308',
+      city: 'entry.276422768',
+      isAgent: 'entry.1875523880',
+      hasLaser: 'entry.1534401669',
+      issue: 'entry.1866273712',
+      desire: 'entry.231517393'
+    };
+
+    function isGoogleFormConfigured() {
+      const hasAction = GOOGLE_FORM_ACTION.includes('/formResponse') && !GOOGLE_FORM_ACTION.includes('THAY_FORM_ID_CUA_BAN');
+      const hasFields = Object.values(GOOGLE_FORM_FIELDS).every((field) => field.startsWith('entry.') && !field.includes('THAY_MA'));
+      return hasAction && hasFields;
+    }
+
+    async function submitToGoogleForm(data) {
+      if (!isGoogleFormConfigured()) {
+        console.warn('Chưa cấu hình GOOGLE_FORM_ACTION hoặc GOOGLE_FORM_FIELDS. Form sẽ chỉ hiện popup demo.');
+        return;
+      }
+
+      const googleFormData = new FormData();
+      Object.entries(GOOGLE_FORM_FIELDS).forEach(([key, entryId]) => {
+        googleFormData.append(entryId, data[key] || '');
+      });
+
+      // Google Form không cho đọc phản hồi do CORS, nên dùng no-cors.
+      // Khi submit thành công, dữ liệu sẽ xuất hiện trong tab Responses của Google Form.
+      await fetch(GOOGLE_FORM_ACTION, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: googleFormData
+      });
+    }
+
+    const DATA = {
+      pains: [
+        {
+          title: 'Hiệu quả không ổn định',
+          text: 'Đi máy laser nhiều lần nhưng sắc tố của khách hàng vẫn dửng dưng không cải thiện.'
+        },
+        {
+          title: 'Dội ngược sắc tố dữ dội',
+          text: 'Da khách dễ bị tái sạm lại nhanh chóng, xuất hiện các vết loang lổ mất sắc tố.'
+        },
+        {
+          title: 'Nền da yếu & tổn thương',
+          text: 'Bối rối xử lý các nền da mỏng yếu do từng peel sai cách hoặc đi sai năng lượng cao.'
+        },
+        {
+          title: 'Thiếu tư duy phối hợp',
+          text: 'Không nắm vững cách kết hợp hoạt chất bôi thoa trước – trong – sau khi đi máy.'
+        }
+      ],
+
+      audiences: [
+        'Chủ Spa, Thẩm mỹ viện đã hoặc đang sở hữu thiết bị laser, công nghệ cao.',
+        'Các Đại lý chính thức của Nemos muốn nâng cấp trình độ và năng lực xử lý sắc tố chuyên nghiệp.',
+        'Cơ sở đang gặp khó trước các ca sạm, loang màu, tăng sắc tố dội ngược do trị liệu sai.',
+        'Đơn vị muốn phát triển uy tín bằng năng lực chuyên môn cốt lõi thay vì phụ thuộc hoàn toàn vào quảng cáo máy móc.'
+      ],
+
+      values: [
+        {
+          title: 'Tư duy gốc về sắc tố trên nền da thực tế',
+          text: 'Hiểu vì sao cùng một công nghệ nhưng mỗi nền da lại cho phản ứng khác biệt, từ đó phân tích căn nguyên và đề ra hướng xử lý chuẩn.'
+        },
+        {
+          title: 'Chiến lược phục hồi nền da trước khi xử lý',
+          text: 'Loại bỏ tư duy “đột kích, đánh mạnh”. Bắt đầu từ tối ưu hàng rào bảo vệ da để giảm nguy cơ dội ngược sắc tố hoặc tái sạm.'
+        },
+        {
+          title: 'Kỹ nghệ phối hợp công nghệ & hoạt chất chuyên sâu',
+          text: 'Làm chủ cách thiết lập thông số máy, xác định điểm đích lâm sàng và thời điểm bổ sung hoạt chất kê đơn chính xác.'
+        },
+        {
+          title: 'Hội chẩn trực tiếp ca lâm sàng thực tế',
+          text: 'Mang ảnh chụp ca biến chứng khó tại Spa để được phân tích lỗi sai và định hướng sửa lại phác đồ ngay tại hội trường.'
+        }
+      ],
+
+      curriculum: [
+        {
+          day: 'DAY 1',
+          label: 'Tư duy & phục hồi',
+          title: 'Tư duy gốc thực chiến & chiến lược phục hồi làn da',
+          morningTitle: 'Buổi sáng: Tư duy khoa học về sắc tố',
+          morning: [
+            'Phân tích vì sao phác đồ công nghệ đơn thuần thường chưa đạt kết quả như kỳ vọng.',
+            'Nhận diện nguyên nhân gốc rễ khiến sắc tố dễ tái phát hoặc dội ngược.',
+            'Tư duy xử lý sắc tố dựa trên nền da thực tế của khách hàng Việt Nam.',
+            'Cách đánh giá nền da trước khi quyết định can thiệp công nghệ.'
+          ],
+          afternoonTitle: 'Buổi chiều: Workshop 1 – Trạm Cứu Hộ Làn Da',
+          afternoon: [
+            'Nhận diện thực tế các nền da bị đậm màu dội ngược.',
+            'Phân loại da loang lổ do đi sai năng lượng hoặc peel không đúng cách.',
+            'Thiết lập phác đồ phục hồi khoa học cho nền da bị tổn thương.',
+            'Ứng dụng hoạt chất hỗ trợ làm dịu, củng cố và tái tạo nền da.'
+          ]
+        },
+        {
+          day: 'DAY 2',
+          label: 'Công nghệ & hoạt chất',
+          title: 'Biện pháp phối hợp kép: công nghệ nâng cao & hoạt chất chuyên sâu',
+          morningTitle: 'Buổi sáng: Nghệ thuật ứng dụng công nghệ',
+          morning: [
+            'Làm chủ tư duy tối ưu hóa các thông số máy thực tế.',
+            'Hiểu vai trò của spot size, năng lượng và tần số trong từng tình trạng da.',
+            'Định hướng xử lý cho da mảng, góc sắc tố đậm và sắc tố hỗn hợp.',
+            'Tránh các lỗi chí mạng khi lạm dụng năng lượng quá mức.'
+          ],
+          afternoonTitle: 'Buổi chiều: Workshop 2 – Kỹ nghệ phối hợp hoạt chất',
+          afternoon: [
+            'Công thức phối hợp hoạt chất trước – trong – sau khi đi máy.',
+            'Kiểm soát gốc sắc tố và giảm nguy cơ tái sạm.',
+            'Tư duy duy trì làn da đều màu bền vững sau liệu trình.',
+            'Định hướng hiệu ứng da sáng khỏe, căng bóng tự nhiên.'
+          ]
+        },
+        {
+          day: 'DAY 3',
+          label: 'Thực tế & hội chẩn',
+          title: 'Quy trình thực tế & hội chẩn trực tiếp tại chỗ',
+          morningTitle: 'Buổi sáng: Chuyển giao quy trình thực tế',
+          morning: [
+            'Hệ thống hóa quy trình kỹ thuật chuẩn chỉnh chuyên nghiệp.',
+            'Trực quan hóa các ca lâm sàng thực tế đã được Nemos hỗ trợ thành công.',
+            'Phân tích những lỗi sai kinh điển trong xử lý sắc tố.',
+            'Thiết lập phác đồ logic, an toàn và dễ theo dõi.'
+          ],
+          afternoonTitle: 'Buổi chiều: Hội chẩn trực tiếp cùng chuyên gia',
+          afternoon: [
+            'Phân tích tình trạng nền da hiện tại.',
+            'Chỉ rõ điểm sai trong phác đồ cũ.',
+            'Đưa ra hướng sửa sai phác đồ ngay tại hội trường.',
+            'Định hướng chăm sóc và bảo toàn kết quả.'
+          ]
+        }
+      ]
+    };
+
+    function renderPainCards() {
+      $('#painGrid').innerHTML = DATA.pains.map((item, index) => `
+        <article class="rounded-2xl border-l-4 border-white/70 bg-nemos-cardBg/40 p-5 transition hover:border-nemos-gold">
+          <div class="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-white/10 font-black text-white">${index + 1}</div>
+          <h3 class="mb-1 text-sm font-extrabold text-white">${item.title}</h3>
+          <p class="text-xs leading-relaxed text-slate-400">${item.text}</p>
+        </article>
+      `).join('');
+    }
+
+    function renderAudiences() {
+      $('#audienceList').innerHTML = DATA.audiences.map((item) => `
+        <div class="flex items-start gap-3">
+          <span class="mt-1 rounded-full bg-nemos-gold/10 p-1 text-nemos-gold">
+            <i class="fa-solid fa-circle-check text-xs"></i>
+          </span>
+          <p class="text-sm leading-relaxed text-slate-300">${item}</p>
+        </div>
+      `).join('');
+    }
+
+    function renderValues() {
+      $('#valueGrid').innerHTML = DATA.values.map((item, index) => `
+        <article class="flex items-start gap-5 rounded-2xl border border-nemos-blue/20 bg-nemos-cardBg/35 p-6 transition hover:border-nemos-gold/40">
+          <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl border border-nemos-gold/30 bg-nemos-blue/40 text-xl font-black text-nemos-gold">
+            ${index + 1}
+          </div>
+          <div>
+            <h3 class="text-lg font-extrabold text-white">${item.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-400">${item.text}</p>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function listItems(items) {
+      return items.map((item) => `
+        <li class="flex items-start gap-2">
+          <i class="fa-solid fa-caret-right mt-1 text-nemos-gold"></i>
+          <span>${item}</span>
+        </li>
+      `).join('');
+    }
+
+    function renderCurriculum() {
+      $('#tabButtons').innerHTML = DATA.curriculum.map((item, index) => `
+        <button class="tab-btn ${index === 0 ? 'active' : ''}" type="button" data-tab="${index}">
+          ${item.day}
+          <span>${item.label}</span>
+        </button>
+      `).join('');
+
+      $('#tabPanels').innerHTML = DATA.curriculum.map((item, index) => `
+        <article class="${index === 0 ? '' : 'hidden-section'} animate-in rounded-3xl border border-nemos-blue/30 bg-nemos-cardBg p-6 sm:p-8" data-panel="${index}">
+          <div class="relative">
+            <div class="absolute -left-6 top-0 h-full w-2 rounded-full bg-nemos-gold sm:-left-8"></div>
+            <span class="mb-1 block text-xs font-black uppercase tracking-[0.16em] text-nemos-gold">Ngày đào tạo thứ ${index + 1}</span>
+            <h3 class="mb-6 text-xl font-black uppercase leading-tight text-white sm:text-2xl">${item.title}</h3>
+          </div>
+
+          <div class="grid gap-8 md:grid-cols-2">
+            <section>
+              <h4 class="border-b border-nemos-blue/35 pb-2 text-base font-extrabold text-nemos-gold">
+                <i class="fa-regular fa-clock mr-2"></i>${item.morningTitle}
+              </h4>
+              <ul class="mt-4 space-y-3 text-sm leading-relaxed text-slate-300">${listItems(item.morning)}</ul>
+            </section>
+
+            <section>
+              <h4 class="border-b border-nemos-blue/35 pb-2 text-base font-extrabold text-nemos-gold">
+                <i class="fa-solid fa-flask mr-2"></i>${item.afternoonTitle}
+              </h4>
+              <ul class="mt-4 space-y-3 text-sm leading-relaxed text-slate-300">${listItems(item.afternoon)}</ul>
+            </section>
+          </div>
+        </article>
+      `).join('');
+
+      $$('.tab-btn').forEach((button) => {
+        button.addEventListener('click', () => setActiveTab(Number(button.dataset.tab)));
+      });
+    }
+
+    function setActiveTab(activeIndex) {
+      $$('.tab-btn').forEach((button) => {
+        button.classList.toggle('active', Number(button.dataset.tab) === activeIndex);
+      });
+
+      $$('[data-panel]').forEach((panel) => {
+        const isActive = Number(panel.dataset.panel) === activeIndex;
+        panel.classList.toggle('hidden-section', !isActive);
+        panel.classList.toggle('animate-in', isActive);
+      });
+    }
+
+    function startCountdown() {
+      const storageKey = 'nemos_countdown_target';
+      const nineDays = 9 * 24 * 60 * 60 * 1000;
+      let target = Number(localStorage.getItem(storageKey));
+
+      if (!target || Number.isNaN(target) || target < Date.now()) {
+        target = Date.now() + nineDays;
+        localStorage.setItem(storageKey, String(target));
+      }
+
+      const fields = {
+        days: $('#days'),
+        hours: $('#hours'),
+        minutes: $('#minutes'),
+        seconds: $('#seconds')
+      };
+
+      function pad(value) {
+        return String(value).padStart(2, '0');
+      }
+
+      function update() {
+        const distance = Math.max(0, target - Date.now());
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((distance / (1000 * 60)) % 60);
+        const seconds = Math.floor((distance / 1000) % 60);
+
+        fields.days.textContent = pad(days);
+        fields.hours.textContent = pad(hours);
+        fields.minutes.textContent = pad(minutes);
+        fields.seconds.textContent = pad(seconds);
+      }
+
+      update();
+      setInterval(update, 1000);
+    }
+
+    function openModal(data) {
+      $('#modalFullname').textContent = data.fullname;
+      $('#modalPhone').textContent = data.phone;
+      $('#modalSpa').textContent = data.spaname;
+      $('#modalCity').textContent = data.city;
+
+      $('#successModal').classList.remove('hidden');
+      $('#successModal').classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      $('#successModal').classList.add('hidden');
+      $('#successModal').classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    function bindForm() {
+      $('#nemosForm').addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const form = event.currentTarget;
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.innerHTML;
+
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        const formData = Object.fromEntries(new FormData(form).entries());
+
+        try {
+          submitButton.disabled = true;
+          submitButton.innerHTML = 'Đang gửi thông tin... <i class="fa-solid fa-spinner fa-spin"></i>';
+
+          await submitToGoogleForm(formData);
+
+          openModal(formData);
+          form.reset();
+        } catch (error) {
+          console.error('Không thể gửi dữ liệu sang Google Form:', error);
+          alert('Thông tin chưa được gửi. Anh/chị vui lòng kiểm tra lại kết nối hoặc thử lại sau.');
+        } finally {
+          submitButton.disabled = false;
+          submitButton.innerHTML = originalButtonText;
+        }
+      });
+
+      $('#closeModalBtn').addEventListener('click', closeModal);
+      $('[data-close-modal]').addEventListener('click', closeModal);
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !$('#successModal').classList.contains('hidden')) {
+          closeModal();
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderPainCards();
+      renderAudiences();
+      renderValues();
+      renderCurriculum();
+      startCountdown();
+      bindForm();
+    });
+  </script>
+</body>
+</html>
