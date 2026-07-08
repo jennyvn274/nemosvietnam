@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- Jenny.vn autoplay music no button version -->
+<!-- Jenny.vn button text Dang ky ngay version -->
 <!-- Jenny.vn music loop fixed version -->
 <!-- Jenny.vn music autoplay version -->
 <!-- Jenny.vn background music version -->
@@ -254,19 +256,7 @@
       </div>
     </div>
   </header>
-
-  <!-- Background music toggle -->
-  <button
-    id="musicToggle"
-    type="button"
-    class="fixed bottom-5 right-5 z-[70] flex items-center gap-2 rounded-full border border-nemos-gold/40 bg-nemos-blue/95 px-4 py-3 text-xs font-extrabold uppercase tracking-[0.12em] text-white shadow-xl backdrop-blur-md transition hover:bg-nemos-blueLight"
-    aria-label="Bật hoặc tắt nhạc nền"
-  >
-    <i id="musicIcon" class="fa-solid fa-volume-xmark text-nemos-gold"></i>
-    <span id="musicText">Đang bật nhạc</span>
-  </button>
-
-  <audio id="bgMusic" loop autoplay preload="auto" playsinline>
+<audio id="bgMusic" loop autoplay preload="auto" playsinline>
     <source src="./background-music.mp3?v=20260708-1" type="audio/mpeg" />
   </audio>
 
@@ -687,7 +677,7 @@
             </label>
 
             <button type="submit" class="gold-btn w-full rounded-2xl py-4 text-sm">
-              Nộp thông tin xét duyệt ngay
+              Đăng ký ngay
               <i class="fa-solid fa-paper-plane"></i>
             </button>
           </form>
@@ -1136,43 +1126,20 @@
 
     function bindBackgroundMusic() {
       const music = $('#bgMusic');
-      const toggle = $('#musicToggle');
-      const icon = $('#musicIcon');
-      const text = $('#musicText');
-
-      if (!music || !toggle || !icon || !text) return;
+      if (!music) return;
 
       music.volume = 0.45;
       let isPlaying = false;
-
-      function setPlayingUI() {
-        isPlaying = true;
-        icon.className = 'fa-solid fa-volume-high text-nemos-gold';
-        text.textContent = 'Tắt nhạc';
-      }
-
-      function setPausedUI() {
-        isPlaying = false;
-        icon.className = 'fa-solid fa-volume-xmark text-nemos-gold';
-        text.textContent = 'Bật nhạc';
-      }
 
       async function playMusic() {
         try {
           music.muted = false;
           await music.play();
-          setPlayingUI();
+          isPlaying = true;
         } catch (error) {
-          // Một số trình duyệt sẽ chặn autoplay có tiếng.
-          // Khi đó nhạc sẽ tự bật ở lần click/chạm đầu tiên của người xem.
-          setPausedUI();
-          console.warn('Trình duyệt chặn tự phát nhạc có tiếng. Sẽ bật nhạc sau tương tác đầu tiên.', error);
+          isPlaying = false;
+          console.warn('Trình duyệt có thể chặn tự phát nhạc có tiếng. Nhạc sẽ bật sau tương tác đầu tiên.', error);
         }
-      }
-
-      function pauseMusic() {
-        music.pause();
-        setPausedUI();
       }
 
       // Cố gắng tự bật nhạc ngay khi vào landing page.
@@ -1184,10 +1151,10 @@
         playMusic();
       });
 
-
-      // Nếu bị trình duyệt chặn, tự bật lại ở lần tương tác đầu tiên.
+      // Nếu bị trình duyệt chặn autoplay, tự bật lại ở lần tương tác đầu tiên trên trang.
       const unlockMusic = () => {
         if (!isPlaying) playMusic();
+
         document.removeEventListener('click', unlockMusic);
         document.removeEventListener('touchstart', unlockMusic);
         document.removeEventListener('keydown', unlockMusic);
@@ -1198,15 +1165,6 @@
       document.addEventListener('touchstart', unlockMusic, { once: true });
       document.addEventListener('keydown', unlockMusic, { once: true });
       document.addEventListener('scroll', unlockMusic, { once: true });
-
-      toggle.addEventListener('click', (event) => {
-        event.stopPropagation();
-        if (isPlaying) {
-          pauseMusic();
-        } else {
-          playMusic();
-        }
-      });
     }
 
     document.addEventListener('DOMContentLoaded', () => {
